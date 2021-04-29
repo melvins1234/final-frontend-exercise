@@ -105,3 +105,59 @@ body {
         }
     }
 }
+
+.banner{
+    background: rgb(235,77,117);
+    background: linear-gradient(62deg, rgba(235,77,117,1) 0%, rgba(195,87,176,1) 45%, rgba(158,97,232,1) 100%);
+    position: relative;
+
+    &__wrapper{
+        &--flex{
+            flex-wrap: wrap;
+            height: 650px;
+        }
+    }
+
+    &__content{
+        color: #fff;
+        width: 330px;
+        padding-top: 167px;
+    }
+
+    &__product{
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    &__description{
+        margin: 50px 0;
+    }
+
+    &__image{
+        position: absolute;
+        bottom: 0;
+        right: 68px;
+    }
+
+    &__button{
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 0;
+        border-bottom: 2px solid #fff;
+    }
+
+    &__icon{
+        position: absolute;
+        top: 263.1px;
+        font-size: 30px;
+
+        &--left{
+            left: -90.1px;
+        }
+        &--right{
+            right: -19px;
+        }
+    }
+}

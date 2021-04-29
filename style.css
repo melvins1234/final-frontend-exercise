@@ -111,4 +111,60 @@ body {
 .header__nav li .active {
   color: #33A0FF;
 }
+
+.banner {
+  background: #eb4d75;
+  background: linear-gradient(62deg, #eb4d75 0%, #c357b0 45%, #9e61e8 100%);
+  position: relative;
+}
+
+.banner__wrapper--flex {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 650px;
+}
+
+.banner__content {
+  color: #fff;
+  width: 330px;
+  padding-top: 167px;
+}
+
+.banner__product {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.banner__description {
+  margin: 50px 0;
+}
+
+.banner__image {
+  position: absolute;
+  bottom: 0;
+  right: 68px;
+}
+
+.banner__button {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 0;
+  border-bottom: 2px solid #fff;
+}
+
+.banner__icon {
+  position: absolute;
+  top: 263.1px;
+  font-size: 30px;
+}
+
+.banner__icon--left {
+  left: -90.1px;
+}
+
+.banner__icon--right {
+  right: -19px;
+}
 /*# sourceMappingURL=style.css.map */
