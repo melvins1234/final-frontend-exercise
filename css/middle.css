@@ -1,0 +1,102 @@
+.middle {
+  margin-top: -65px;
+}
+
+.middle__wrapper--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 280px;
+}
+
+.middle__content {
+  width: 220px;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+}
+
+.middle__content--middle {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+}
+
+.middle__content--middle h3, .middle__content--middle span {
+  margin: 0;
+}
+
+.middle__content--last {
+  width: 154px;
+}
+
+.middle__title, .middle__price {
+  font-size: 24px;
+  margin-bottom: 21px;
+}
+
+.middle__description {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.middle__image {
+  position: absolute;
+}
+
+.middle__image--iphone {
+  right: -23px;
+  top: 35px;
+}
+
+.middle__image--vr {
+  top: -45px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.middle__image--gopro {
+  top: 89px;
+  right: -25px;
+}
+
+.middle__article {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  padding: 31px;
+  width: 390px;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.middle__article--bgcolorPink {
+  background-color: #FF6875;
+  color: #fff;
+}
+
+.middle__article--plain {
+  background: #fff;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.middle__article--bgcolorGray {
+  background-color: #C1C8CE;
+}
+/*# sourceMappingURL=middle.css.map */
