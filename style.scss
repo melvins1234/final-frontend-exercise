@@ -10,6 +10,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: inherit;
 }
 
 body {
@@ -18,6 +19,11 @@ body {
     font-family: Proxima Nova Rg;
     font-size: 14px;
     line-height: 22px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
 }
 
 .wrapper {
@@ -121,7 +127,7 @@ body {
     &__content{
         color: #fff;
         width: 330px;
-        padding-top: 167px;
+        padding: 167px 0 0 70px;
     }
 
     &__product{
@@ -154,10 +160,111 @@ body {
         font-size: 30px;
 
         &--left{
-            left: -90.1px;
+            left: -20px;
         }
         &--right{
-            right: -19px;
+            right: -20px;
         }
     }
+}
+
+.bottom1{
+    &__header{
+        text-align: center;
+        margin-bottom: 37px;
+        h2{
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+
+    }
+    &__nav{
+        position: relative;
+        align-items: center;
+        width: 464px;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        margin-top: 31px;
+        ul{
+            display: flex;
+        }
+    }
+
+    &__menu{
+        list-style-type: none;
+        flex: 1 1 auto;
+        a{
+            padding: 8px 0;
+        }
+
+        &--active, &:hover{
+            a{
+                color: #33A0FF;
+                border-bottom: 3px solid #33A0FF;
+            }
+        }
+    }
+
+    &__products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__card{
+        text-align: center;
+        margin-bottom: 30px;
+        cursor: pointer;
+        position: relative;
+
+        &::before, &::after{
+            position: absolute;
+            font-family: "Font Awesome 5 Free"; 
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+            top: 20%;
+        }
+        &::before{
+            content: '\f004';
+        }
+        &::after{
+            content: "\f07a";
+        }
+        
+        &:hover{
+            
+        }
+
+        &__image{
+            margin-bottom: 48px;
+        }
+        &__title{
+            margin-bottom: 30px;
+        }
+        &__star{
+            color: #FFC600;
+            &:last-of-type{
+                color: #C1C8CE;
+            }
+        }
+        &__footer{
+            font-size: 16px;
+            margin-top: 12.35px;
+        }
+        &__price{
+            color: #FF4858;
+            padding: 0 13px;
+            &:last-of-type{
+                color: #C1C8CE;
+                text-decoration: line-through;
+            }
+        }
+    }
+
 }

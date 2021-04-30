@@ -9,6 +9,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-size: inherit;
 }
 
 body {
@@ -17,6 +18,11 @@ body {
   font-family: Proxima Nova Rg;
   font-size: 14px;
   line-height: 22px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 .wrapper {
@@ -127,7 +133,7 @@ body {
 .banner__content {
   color: #fff;
   width: 330px;
-  padding-top: 167px;
+  padding: 167px 0 0 70px;
 }
 
 .banner__product {
@@ -161,10 +167,124 @@ body {
 }
 
 .banner__icon--left {
-  left: -90.1px;
+  left: -20px;
 }
 
 .banner__icon--right {
-  right: -19px;
+  right: -20px;
+}
+
+.bottom1__header {
+  text-align: center;
+  margin-bottom: 37px;
+}
+
+.bottom1__header h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.bottom1__nav {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 464px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 31px;
+}
+
+.bottom1__nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bottom1__menu {
+  list-style-type: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.bottom1__menu a {
+  padding: 8px 0;
+}
+
+.bottom1__menu--active a, .bottom1__menu:hover a {
+  color: #33A0FF;
+  border-bottom: 3px solid #33A0FF;
+}
+
+.bottom1__products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bottom1__card {
+  text-align: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.bottom1__card::before, .bottom1__card::after {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  top: 20%;
+}
+
+.bottom1__card::before {
+  content: '\f004';
+}
+
+.bottom1__card::after {
+  content: "\f07a";
+}
+
+.bottom1__card__image {
+  margin-bottom: 48px;
+}
+
+.bottom1__card__title {
+  margin-bottom: 30px;
+}
+
+.bottom1__card__star {
+  color: #FFC600;
+}
+
+.bottom1__card__star:last-of-type {
+  color: #C1C8CE;
+}
+
+.bottom1__card__footer {
+  font-size: 16px;
+  margin-top: 12.35px;
+}
+
+.bottom1__card__price {
+  color: #FF4858;
+  padding: 0 13px;
+}
+
+.bottom1__card__price:last-of-type {
+  color: #C1C8CE;
+  text-decoration: line-through;
 }
 /*# sourceMappingURL=style.css.map */
