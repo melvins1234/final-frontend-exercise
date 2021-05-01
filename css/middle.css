@@ -1,6 +1,7 @@
 .middle {
   margin-top: -65px;
   margin-bottom: 93px;
+  font-weight: 300;
 }
 
 .middle__wrapper--flex {
@@ -40,6 +41,10 @@
   width: 154px;
 }
 
+.middle__title {
+  font-weight: bold;
+}
+
 .middle__title, .middle__price {
   font-size: 24px;
   margin-bottom: 21px;
@@ -48,6 +53,7 @@
 .middle__description {
   font-size: 12px;
   margin-bottom: 20px;
+  line-height: 20px;
 }
 
 .middle__image {
