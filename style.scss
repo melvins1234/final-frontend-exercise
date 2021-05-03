@@ -68,6 +68,7 @@ a{
     max-width: 100%;
     position: relative;
     margin: 0 auto;
+    display: flex;
 }
 
 .header {
@@ -216,6 +217,10 @@ a{
     margin-bottom: 151px;
     position: relative;
     z-index: 1;
+
+    & > .wrapper{
+        flex-direction: column;
+    }
 
     &__header{
         text-align: center;
@@ -371,12 +376,14 @@ a{
     }
 
     &__button{
-        display: inline-block;
+        display: block;
         padding: 6px 0;
         color: #33A0FF;
         border-bottom: 3px solid #33A0FF;
         text-transform: uppercase;
         font-weight: bold;
+        width: 85px;
+        margin: 0 auto;
     }
 
 }
@@ -384,7 +391,6 @@ a{
 .bottom2{
     background: #2E90E5;
     // overflow: hidden;
-    margin-bottom: 50px;
     color: #fff;
 
     .wrapper{
@@ -419,9 +425,38 @@ a{
     }
 
     &__image{
-        width: 677px;
         position: absolute;
         right: -35px;
-        top: -105px;
+        top: -90px;
+    }
+}
+
+.bottom3{
+    position: relative;
+    z-index: 1;
+    background: white;
+    padding: 90px 0;
+
+    &__box{
+        text-align: center;
+        margin: 0 35px;
+    }
+
+    &__title{
+        font-weight: 600;
+        line-height: 43px;
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-bottom: 35px;
+    }
+
+    &__icon{
+        display: block;
+        text-align: center;
+        margin: 0 auto 30px;
+    }
+    
+    &__content{
+        line-height: 24px;
     }
 }
