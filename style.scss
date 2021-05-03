@@ -55,7 +55,7 @@ body {
     margin: 0;
     padding: 0;
     font: normal normal normal 14px/17px ProximaNova;
-    color: #262626;
+    color: #22262A;
 }
 
 a{
@@ -458,5 +458,50 @@ a{
     
     &__content{
         line-height: 24px;
+    }
+}
+
+.bottom4{
+    padding: 70px 0;
+    & > .wrapper{
+        flex-direction: column;
+    }
+
+    &__title{
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 36px;
+        text-transform: uppercase;
+        margin-bottom: 63px;
+        text-align: center;
+    }
+
+    &__news{
+        display: flex;
+
+        &__image{
+            margin-right: 20px;
+        }
+
+        &__box{
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        &__date{
+            color: #C1C8CE;
+            display: block;
+        }
+
+        &__title{
+            font-size: 18px;
+            line-height: 43px;
+            font-weight: bold;
+        }
+
+        &__content{
+            line-height: 24px;
+        }
     }
 }
