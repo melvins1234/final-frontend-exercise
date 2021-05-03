@@ -29,4 +29,28 @@
       -ms-flex: 1 1 1;
           flex: 1 1 1;
 }
+
+.cart-section__table-row--product {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 4 4;
+          flex: 2 4 4;
+}
+
+.cart-section__table-row--unit-price {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 1;
+          flex: 1 1 1;
+}
+
+.cart-section__table-row--qty {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 2 2;
+          flex: 1 2 2;
+}
+
+.cart-section__table-row--price {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 1;
+          flex: 1 1 1;
+}
 /*# sourceMappingURL=cart.css.map */

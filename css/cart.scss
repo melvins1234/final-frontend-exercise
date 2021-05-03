@@ -16,4 +16,18 @@
             flex: 1 1 1;
         }
     }
+    &__table-row{
+        &--product{
+            flex: 2 4 4;
+        }
+        &--unit-price{
+            flex: 1 1 1;
+        }
+        &--qty{
+            flex: 1 2 2;
+        }
+        &--price{
+            flex: 1 1 1;
+        }
+    }
 }
