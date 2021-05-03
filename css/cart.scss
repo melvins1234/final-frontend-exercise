@@ -1,0 +1,19 @@
+.cart-section{
+    &__table-header{
+        display: flex;
+        font-weight: bold;
+        font-size: 1.3em;
+        &--product{
+            flex: 2 4 4;
+        }
+        &--unit-price{
+            flex: 1 1 1;
+        }
+        &--qty{
+            flex: 1 2 2;
+        }
+        &--price{
+            flex: 1 1 1;
+        }
+    }
+}

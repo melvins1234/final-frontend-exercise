@@ -1,0 +1,32 @@
+.cart-section__table-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.cart-section__table-header--product {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 4 4;
+          flex: 2 4 4;
+}
+
+.cart-section__table-header--unit-price {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 1;
+          flex: 1 1 1;
+}
+
+.cart-section__table-header--qty {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 2 2;
+          flex: 1 2 2;
+}
+
+.cart-section__table-header--price {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 1;
+          flex: 1 1 1;
+}
+/*# sourceMappingURL=cart.css.map */
