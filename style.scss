@@ -214,6 +214,8 @@ a{
     font-weight: 600;
     text-align: center;
     margin-bottom: 151px;
+    position: relative;
+    z-index: 1;
 
     &__header{
         text-align: center;
@@ -392,6 +394,7 @@ a{
     &__content{
         width: 400px;
         max-width: 100%;
+        padding-top: 145px;
     }
 
     &__product{
@@ -416,9 +419,9 @@ a{
     }
 
     &__image{
-        width: 667px;
+        width: 677px;
         position: absolute;
         right: -35px;
-        bottom: -300px;
+        top: -105px;
     }
 }

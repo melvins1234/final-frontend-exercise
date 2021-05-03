@@ -215,6 +215,8 @@ a {
   font-weight: 600;
   text-align: center;
   margin-bottom: 151px;
+  position: relative;
+  z-index: 1;
 }
 
 .bottom1__header {
@@ -411,6 +413,7 @@ a {
 .bottom2__content {
   width: 400px;
   max-width: 100%;
+  padding-top: 145px;
 }
 
 .bottom2__product {
@@ -435,9 +438,9 @@ a {
 }
 
 .bottom2__image {
-  width: 667px;
+  width: 677px;
   position: absolute;
   right: -35px;
-  bottom: -300px;
+  top: -105px;
 }
 /*# sourceMappingURL=style.css.map */
