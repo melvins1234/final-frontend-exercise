@@ -385,7 +385,7 @@ a {
 
 .bottom1__card__price {
   color: #FF4858;
-  padding: 0 13px;
+  padding: 0 5px;
 }
 
 .bottom1__card__price:last-of-type {
@@ -458,7 +458,7 @@ a {
   position: relative;
   z-index: 1;
   background: white;
-  padding: 90px 0;
+  padding: 90px 0 70px;
 }
 
 .bottom3__box {
@@ -484,10 +484,6 @@ a {
   line-height: 24px;
 }
 
-.bottom4 {
-  padding: 70px 0;
-}
-
 .bottom4 > .wrapper {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -500,7 +496,7 @@ a {
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  margin-bottom: 63px;
+  padding: 71px 0 63px;
   text-align: center;
 }
 
@@ -508,6 +504,10 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.bottom4__news--upper, .bottom4__news--lower {
+  padding-bottom: 70px;
 }
 
 .bottom4__news__image {
@@ -522,6 +522,8 @@ a {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 20px;
+  width: 390px;
+  max-width: 100%;
 }
 
 .bottom4__news__date {
@@ -535,8 +537,75 @@ a {
   font-weight: bold;
 }
 
+.bottom4__news__title--font {
+  font-size: 14px;
+  line-height: 17px;
+}
+
 .bottom4__news__content {
   line-height: 24px;
+}
+
+.bottom4__news--lower .bottom4__news__title {
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+
+.bottom4__news--lower .fas {
+  color: #FFC600;
+}
+
+.bottom4__news--lower .fas:last-of-type {
+  color: #C1C8CE;
+  margin-bottom: 13px;
+}
+
+.bottom4__news--lower .bottom1__card__price:first-child {
+  padding-left: 0;
+}
+
+.bottom4__search {
+  text-align: center;
+  font-size: 0;
+  padding: 70px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bottom4__search input[type='text'] {
+  width: 480px;
+  max-width: 100%;
+  padding: 22px 0 22px 20px;
+  border: 2px solid #F6F7F8;
+  font-weight: 600;
+  color: #262626;
+  font: inherit;
+  border-radius: 4px 0 0 4px;
+  display: inline-block;
+  font-size: 17px;
+  height: 60px;
+}
+
+.bottom4__btn {
+  background: #2E90E5;
+  padding: 22px 43px 22px 20px;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  width: 120px;
+  max-width: 100%;
+  display: inline-block;
+  font-size: 17px;
+  height: 60px;
+  border: 2px solid #2E90E5;
+}
+
+.bottom4__btn:hover {
+  background: #fff;
+  color: #2E90E5;
 }
 
 /* footer.scss merged. *start* */
@@ -612,7 +681,7 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 30px 0;
+  padding: 30px 0 0;
 }
 
 .footer__middle--site-map {
