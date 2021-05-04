@@ -154,6 +154,38 @@ a {
   color: #33A0FF;
 }
 
+.breadcrumbs__nav {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 17px 0;
+  font-weight: 600;
+}
+
+.breadcrumbs__nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.breadcrumbs__tab {
+  list-style-type: none;
+}
+
+.breadcrumbs__tab a {
+  color: #33A0FF;
+}
+
+.breadcrumbs__tab:not(:last-child)::after {
+  content: '/';
+  padding: 0 10px;
+  color: #C1C8CE;
+}
+
+.breadcrumbs__tab--active a {
+  color: #22262A;
+}
+
 .banner {
   background: #eb4d75;
   background: linear-gradient(62deg, #eb4d75 0%, #c357b0 45%, #9e61e8 100%);
