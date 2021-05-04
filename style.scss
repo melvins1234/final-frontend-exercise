@@ -92,6 +92,12 @@ a{
         }
 
         &--cart {
+            a.active{
+                color:#33A0FF;
+            }
+            a:hover{
+                opacity: 60%;
+            }
             span {
                 opacity: 50%;
             }

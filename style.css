@@ -91,6 +91,14 @@ a {
   padding: 10px;
 }
 
+.header__top--cart a.active {
+  color: #33A0FF;
+}
+
+.header__top--cart a:hover {
+  opacity: 60%;
+}
+
 .header__top--cart span {
   opacity: 50%;
 }
