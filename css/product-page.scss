@@ -30,5 +30,81 @@
                 }
             }
         }
+
+        &--details{
+            display: flex;
+            flex-direction: column;
+        }
+        &--title{
+            font-weight: 600;
+            line-height: 43px;
+            color: #22262A;
+            font-size: 24px;
+        }
+
+        &--review{
+            color: #C1C8CE;
+            font-weight: 600;
+            i:not(:last-of-type){
+                color: #FFC600;
+            }
+        }
+
+        &--submit{
+            color: #33A0FF;
+        }
+
+        &--price{
+            font-size: 24px;
+        }
+        
+        &--ship, &--color{
+            span{
+                width: 100px;
+                max-width: 100%;
+                display: inline-block;
+                font-weight: bold;
+            }
+        }
+
+        &--color{
+            display: flex;
+            align-items: center;
+        }
+
+        &--select_color{
+            display: flex;
+
+            span{
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+            }
+        }
+
+        &--blue{
+            background: #006CFF;
+        }
+        &--red{
+            background: #FC3E39;
+        }
+        &--black{
+            background: #171717;
+        }
+        &--yellow{
+            background: #FFF600;
+        }
+        &--sizes{
+            width: 116px !important;
+            height: 38px;
+            border: 2px solid #F1F3F4;
+            border-radius: 4px;
+            font-weight: normal !important;
+            padding: 11px 15px;
+
+           i{
+               float: right;
+           }
+        }
     }
 }
