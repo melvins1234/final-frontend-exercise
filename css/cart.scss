@@ -1,6 +1,7 @@
 .cart-section{
     display: flex;
     flex-flow: column;
+    margin-top: 50px;
     &__table-header{
         display: flex;
         align-items: center;
@@ -40,7 +41,7 @@
 
             &--cancel-item-btn{
                 border: 0px;
-                background-color: rgba(253, 46, 46, 0.2);
+                background-color: rgba(253, 46, 46, 0.1);
                 border-radius: 50%;
                 width: 20px;
                 height: 20px;
@@ -48,17 +49,19 @@
                 text-align: center;
                 i{
                     color: #FD2E2E;
+                    padding: 0 0 0 1px;
                     opacity: 70%;
                 }
             }
             &--cancel-item-btn:hover{
-                background-color: rgba(253, 46, 46, 0.4);
+                background-color: rgba(253, 46, 46, 0.2);
                 i{
                     opacity: 100%;
+                    color:white;
                 }
             }
             &--cancel-item-btn:active{
-                background-color: rgba(253, 46, 46, 0.7);
+                background-color: rgba(253, 46, 46, 0.4);
                 i{
                     color: white;
                     opacity: 100%;
