@@ -170,12 +170,12 @@ a {
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-bottom: 7px solid #F6F7F8;
+  border-bottom: 7px solid #f0f0f0;
   position: absolute;
   top: 36px;
   /* change left value to move to other nav item
                         home is 14px left*/
-  left: 14px;
+  left: 570px;
   opacity: 100%;
 }
 
@@ -187,7 +187,7 @@ a {
 }
 
 .header__drop-down-nav {
-  border-top: 3px solid #F6F7F8;
+  border-top: 3px solid #f0f0f0;
   position: absolute;
   left: 0;
   right: 0;
@@ -197,7 +197,7 @@ a {
   display: flex;
   background-color: #fff;
   border-radius: 0 0 5px 5px;
-  width: 900px;
+  width: 950px;
   height: 330px;
   font-weight: normal;
   z-index: 100;
@@ -278,19 +278,27 @@ a {
 
 @-webkit-keyframes move-arrow-to-store {
   from {
-    left: 14px;
+    .header__main-nav__arrow-guide i {
+      left: 14px;
+    }
   }
   to {
-    left: 115px;
+    .header__main-nav__arrow-guide i {
+      left: 115px;
+    }
   }
 }
 
 @keyframes move-arrow-to-store {
   from {
-    left: 14px;
+    .header__main-nav__arrow-guide i {
+      left: 14px;
+    }
   }
   to {
-    left: 115px;
+    .header__main-nav__arrow-guide i {
+      left: 115px;
+    }
   }
 
 .breadcrumbs {
