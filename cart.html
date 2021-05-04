@@ -35,17 +35,25 @@
                 <ul>
                     <li>
                         <div class="header__main-nav__arrow-guide">
-                            <i class="header__main-nav__arrow-guide--arrow-up"></i>
+                            <i id="main-nav-arrow" class="header__main-nav__arrow-guide--arrow-up"></i>
                         </div>
-                        <a href="index.html" class="header__main-nav--home">HOME</a>
+                        <a href="index.html" class="header__main-nav--home" onmouseover="moveArrow('14px')">
+                            HOME
+                        </a>
                     </li>
-                    <li><a href="" class="header__main-nav--store">STORE</a></li>
-                    <li><a href="" class="header__main-nav--iphone">IPHONE</a></li>
-                    <li><a href="" class="header__main-nav--ipad">IPAD</a></li>
-                    <li><a href="" class="header__main-nav--macbook">MACBOOK</a></li>
-                    <li><a href="" class="header__main-nav--accessories">ACCESSORIES</a></li>
+                    <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')">STORE</a></li>
+                    <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')">IPHONE</a></li>
+                    <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')">IPAD</a></li>
+                    <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')">MACBOOK</a></li>
+                    <li><a href="" class="header__main-nav--accessories" onmouseover="moveArrow('570px')">ACCESSORIES</a></li>
                 </ul>
             </nav>
+    <script>
+        function moveArrow(xMove) {
+        var arrowElement = document.getElementById("main-nav-arrow");
+        arrowElement.style.left = xMove;
+        }
+    </script>
             <nav class="header__drop-down-nav">
                 <div class="header__drop-down-nav__products">
                     <h5>Category</h5>
