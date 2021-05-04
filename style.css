@@ -154,6 +154,11 @@ a {
   color: #33A0FF;
 }
 
+.breadcrumbs {
+  background: #F6F7F8;
+  margin-bottom: 60px;
+}
+
 .breadcrumbs__nav {
   display: block;
   margin: 0 auto;
@@ -317,6 +322,10 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 60px;
+}
+
+.bottom1__products--margin {
+  margin-bottom: 0;
 }
 
 .bottom1__card {
