@@ -149,6 +149,10 @@ a{
                 text-decoration: none;
                 color: #33A0FF;
             }
+            a.active {
+                text-decoration: none;
+                color: #33A0FF;
+            }
             .header__main-nav__arrow-guide{
                 width:0;
                 height:0;
@@ -166,8 +170,8 @@ a{
                     /* change left value to move to other nav item
                         home is 14px left*/
                     left:570px;
-                    //display: block;
-                    opacity: 100%;
+                    display: none;
+                    //opacity: 100%;
                 }
             }
             a.header__main-nav--store:hover{
@@ -181,8 +185,8 @@ a{
         position:absolute;
         left: 0; right: 0;
         margin: 0 auto;
-        display: flex;
-        //display: none;
+        //display: flex;
+        display: none;
         //opacity: 0;
         background-color: #fff;
         border-radius: 0 0 5px 5px;
