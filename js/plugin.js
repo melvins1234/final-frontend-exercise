@@ -20,7 +20,15 @@ hasDropDown.addEventListener("click", function(){
     }else{
         this.nextElementSibling.classList.add("header__mega-menu--show")
     }
-    
+
+    if(this.firstChild.classList.contains("fa-caret-down")){
+        this.firstChild.classList.remove("fa-caret-down");
+        this.firstChild.classList.add("fa-caret-up");
+    }else{
+        this.firstChild.classList.add("fa-caret-down");
+        this.firstChild.classList.remove("fa-caret-up");
+    }
+
 });
 
 function removeMenuTabEvents(){
