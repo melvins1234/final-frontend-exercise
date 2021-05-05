@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAKUTECH</title>
+
+    <script src="js/header.js" async></script>
+    <link rel="stylesheet" href="css/preset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/middle.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+</head>
+
+<body>
+
+    <!-- Header Area -->
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__top">
+                <span>EN&nbsp; <i class="fas fa-caret-down"></i></span>
+                <span>USD&nbsp; <i class="fas fa-caret-down"></i> </span>
+                <div class="header__top--user-profile"><i class="far fa-user"></i> My Profile</div>
+                <div class="header__top--cart">
+                    <a href="cart.html" class="active"><i class="fas fa-shopping-basket"></i> 0 Items <span>$0.00</span></a>
+                </div>
+                <div class="header__top--search-icon"><i class="fas fa-search"></i></div>
+            </div>
+            <div class="header--brand">
+                    <h1>RAKU<span>TECH</span></h1>
+            </div>
+            <nav class="header__main-nav">
+                <ul>
+                    <li>
+                        <div class="header__main-nav__arrow-guide">
+                            <i id="main-nav-arrow" class="header__main-nav__arrow-guide--arrow-up"></i>
+                        </div>
+                        <a href="index.html" class="header__main-nav--home" onmouseover="moveArrow('14px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">
+                            HOME
+                        </a>
+                    </li>
+                    <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">STORE</a></li>
+                    <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPHONE</a></li>
+                    <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPAD</a></li>
+                    <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">MACBOOK</a></li>
+                    <li><a href="product.html" class="header__main-nav--accessories" onmouseover="moveArrow('570px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">ACCESSORIES</a></li>
+                </ul>
+            </nav>
+            <nav class="header__drop-down-nav" onmouseover="displayHeaderDropDownMenu()" onmouseout="slowlyHideHeaderDropDownMenuNow()">
+                <div class="header__drop-down-nav__products">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Airport & Wireless</li>
+                        <li>AppleCare</li>
+                        <li>Bags, Shells & Sleeves</li>
+                        <li>Business & Security</li>
+                        <li>Cable & Docs</li>
+                        <li>Cameras & Video</li>
+                        <li>Car & Travel</li>
+                        <li>Cases & Films</li>
+                    </ul>
+                </div>
+                <div class="header__drop-down-nav__accessories-1">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Charging Devices</li>
+                        <li>Connected Home</li>
+                        <li>Device Care</li>
+                        <li>Display & Graphic</li>
+                        <li>Fitness & Sport</li>
+                        <li>Headphones</li>
+                        <li>HealthKit</li>
+                    </ul>
+                </div>
+                <div class="header__drop-down-nav__accessories-2">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Mice & Keyboards</li>
+                        <li>Music Creation</li>
+                        <li>Networking & Server</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <nav class="header__bread-crumbs"> <a href="index.html" class="active">Home</a> <span> / </span> <a href="#" class="">My shopping cart</a> </nav>
+    <div class="header__bottom-space"></div>
+
+    <!-- Cart Section Area -->
+    <section class="cart-section wrapper">
+        <div class="cart-section__table-header">
+            <div class="cart-section__table-header--product">PRODUCT</div>
+            <div class="cart-section__table-header--unit-price">UNIT PRICE</div>
+            <div class="cart-section__table-header--qty">QTY</div>
+            <div class="cart-section__table-header--price">PRICE</div>
+        </div>
+        <div class="cart-section__table-row">
+            <div class="cart-section__table-row--product">
+                <button class="cart-section__table-row--product--cancel-item-btn"><i class="fas fa-times"></i></button>
+                <img src="images/c04297141.png">
+                Philips Hue 7W BR30 Connected Downlight Lamp
+            </div>
+            <div class="cart-section__table-row--unit-price">$499</div>
+            <div class="cart-section__table-row--qty">
+                <button class="cart-section__table-row--qty--minus-btn" id="qty-minus-btn">-</button>
+                <div class="cart-section__table-row--qty--number">2</div>
+                <button class="cart-section__table-row--qty--plus-btn" id="qty-plus-btn">+</button>
+            </div>
+            <div class="cart-section__table-row--price">$998</div>
+        </div>
+        <div class="cart-section__table-row">
+            <div class="cart-section__table-row--product">
+                <button class="cart-section__table-row--product--cancel-item-btn"><i class="fas fa-times"></i></button>
+                <img src="images/macbook-pro.png">
+                Apple MacBook Pro
+            </div>
+            <div class="cart-section__table-row--unit-price">$499</div>
+            <div class="cart-section__table-row--qty">
+                <button class="cart-section__table-row--qty--minus-btn" id="qty-minus-btn">-</button>
+                <div class="cart-section__table-row--qty--number">2</div>
+                <button class="cart-section__table-row--qty--plus-btn" id="qty-plus-btn">+</button>
+            </div>
+            <div class="cart-section__table-row--price">$998</div>
+        </div>
+        <div class="cart-section__bottom">
+            <div class="cart-section__bottom__voucher">
+                <input type="text" value="Voucher code">
+                <button class="cart-section__bottom__voucher--redeem-btn">Redeem</button>
+            </div>
+            <div class="cart-section__bottom__total-table">
+                <div class="cart-section__bottom__total-table--subtotal">
+                    <span>Subtotal</span>
+                    <span>$ 998.00</span>
+                </div>
+                <div class="cart-section__bottom__total-table--shipping-fee">
+                    <span>Shipping fee</span>
+                    <span>$ 20.00</span>
+                </div>
+                <div class="cart-section__bottom__total-table--coupon">
+                    <span>Coupon</span>
+                    <span>No</span>
+                </div> 
+                <div class="cart-section__bottom__total-table--total">
+                    <span>Total</span>
+                    <span>$ 1,018.00</span>
+                </div>
+                <div class="cart-section__bottom__total-table--check-out">
+                    <button class="cart-section__bottom__total-table--check-out--btn">Check Out</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="footer">
+        <div class="footer__top-outer-container">
+            <div class="footer__top wrapper">
+                <div class="footer__top--brand-description">
+                    <h3>RAKUTECH</h3>
+                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe cum hic eligendi a obcaecati voluptatum at maxime, dicta eaque.</span>
+                </div>
+                <div class="footer__top--social-media">
+                    <h5 class="footer--heading">Follow Us</h5>
+                    <span>Totam ullam reiciendis corrupti libero placeat aut. Earum quis expedita.</span>
+                    <div><i class="fab fa-facebook-f"></i> <i class="fab fa-twitter"></i></div>
+                </div>
+                <div class="footer__top--contact-us">
+                    <h5 class="footer--heading">Contact Us</h5>
+                    <span>
+                        My Company, 4578 Marmora Road, Glasgow<br>
+                        D04 89GR<br>
+                        Call us now: 0123-456-789<br>
+                        Email: support@whatever.com
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__middle wrapper">
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Information</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Service</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Extras</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">My Account</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Useful Links</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Our Offers</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom-outer-container">
+            <div class="footer__bottom wrapper">
+                <span>© 2018 Ecommerce theme by www.bisenbaev.com</span>
+                <div class="footer__bottom--fund-transfers">
+                    <img src="images/Western-union.png" alt="">
+                    <img src="images/Group 19.png" alt="">
+                    <img src="images/Paypal.png" alt="">
+                    <img src="images/visa.jpg" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+</body>
+</html>
