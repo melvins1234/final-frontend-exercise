@@ -303,6 +303,7 @@ a {
       left: 115px;
     }
   }
+}
 
 .breadcrumbs {
   background: #F6F7F8;
@@ -339,7 +340,6 @@ a {
 
 .breadcrumbs__tab--active a {
   color: #22262A;
-
 }
 
 .banner {
