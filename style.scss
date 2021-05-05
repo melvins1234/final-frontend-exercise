@@ -72,6 +72,14 @@ a{
 .header {
     width: 100%;
     font-weight: 600;
+
+    &__mobile{
+
+        &--logo, &--cart{
+            display: none;    
+        }
+    }
+
     &__top {
         display: flex;
         padding: 10px 0 20px 0;
@@ -121,6 +129,14 @@ a{
         margin: 0 auto;
         width: fit-content;
         margin-bottom: 15px;
+
+        &--toggle{
+            display: none;
+        }
+
+        &--carret{
+            display: none;
+        }
 
         ul {
             margin: 0 auto;
@@ -183,15 +199,15 @@ a{
         position:absolute;
         left: 0; right: 0;
         margin: 0 auto;
-        //display: flex;
         display: none;
-        //opacity: 0;
         background-color: #fff;
         border-radius: 0 0 5px 5px;
         width: 950px;
         height: 330px;
         font-weight: normal;
-         z-index: 100;
+        z-index: 100;
+        width: 100%;
+
         h5{
             font-size: 1.1em;
             font-weight: bold;
@@ -222,6 +238,11 @@ a{
             flex: 1;
         }
     }
+
+    &__mega-menu{
+        display: none;
+    }
+
     &__bread-crumbs{
         display: block;
         //display: none;
