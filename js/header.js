@@ -1,5 +1,13 @@
 
-var delayInProgress = false;
+var delayInProgress = false,
+    closeBtnModal = document.querySelector('.modal__close');
+
+    console.log(closeBtnModal);
+
+closeBtnModal.addEventListener("click", function(){
+    this.parentElement.parentElement.style.display = "none";
+});
+
 function moveArrow(xMove) {
     var arrowElement = document.getElementById("main-nav-arrow");
     displayHeaderDropDownMenu();
