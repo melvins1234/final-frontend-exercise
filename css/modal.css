@@ -1,0 +1,122 @@
+@media screen and (max-height: 530px) {
+  .modal {
+    -webkit-box-align: unset !important;
+        -ms-flex-align: unset !important;
+            align-items: unset !important;
+  }
+}
+
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99999;
+  overflow-y: auto;
+  padding: 25px 0;
+}
+
+.modal__box {
+  position: relative;
+  width: 960px;
+  max-width: 100%;
+  height: 480px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.modal__close {
+  font-size: 30px;
+  width: 47px;
+  height: 47px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  background: #22262A;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  top: -20px;
+  right: -20px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.modal__close i {
+  color: #fff;
+}
+
+.modal__content {
+  text-align: center;
+  width: 553px;
+  max-width: 100%;
+}
+
+.modal__content--inner {
+  padding: 63px 77px;
+}
+
+.modal__title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  margin-bottom: 34px;
+}
+
+.modal__description {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 67px;
+}
+
+.modal__sub {
+  padding: 0;
+}
+
+.modal__unsub input {
+  margin-right: 15px;
+}
+
+.modal__checkbox {
+  display: none;
+}
+
+.modal__label {
+  background: url("../images/check.png");
+}
+
+.modal__checkbox + .modal__label {
+  padding-left: 40px;
+  height: 24px;
+  display: inline-block;
+  line-height: 24px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.modal__checkbox:checked + .modal__label {
+  background-position: 0 -24px;
+}
+
+.modal__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/*# sourceMappingURL=modal.css.map */
