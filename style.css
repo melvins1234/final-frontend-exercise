@@ -71,6 +71,10 @@ a {
   font-weight: 600;
 }
 
+.header__mobile--logo, .header__mobile--cart {
+  display: none;
+}
+
 .header__top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,6 +130,14 @@ a {
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 15px;
+}
+
+.header__main-nav--toggle {
+  display: none;
+}
+
+.header__main-nav--carret {
+  display: none;
 }
 
 .header__main-nav ul {
@@ -204,6 +216,7 @@ a {
   height: 330px;
   font-weight: normal;
   z-index: 100;
+  width: 100%;
 }
 
 .header__drop-down-nav h5 {
@@ -252,6 +265,10 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.header__mega-menu {
+  display: none;
 }
 
 .header__bread-crumbs {
