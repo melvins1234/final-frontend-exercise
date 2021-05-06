@@ -1,6 +1,31 @@
+@mixin for-desktop {
+    @media (max-width: 1280px) {@content};
+}
+
+@mixin for-tablet-landscape-desktop {
+    @media (max-width: 1024px) {@content};
+}
+
+@mixin for-Ipad {
+    @media (max-width: 960px) {@content};
+}
+
+@mixin for-tablet-portrait-up {
+    @media (max-width: 640px) {@content};
+}
+
+@mixin for-tablet-small{
+    @media (max-width: 480px) {@content};
+}
+
+@mixin for-phone-ony {
+    @media (max-width: 320px) {@content};
+}
+
+
 .modal{
-    // display: none;
-    @media screen and (max-width: 900px) {
+
+    @include for-Ipad(){
         &__title{
             font-size: 38px;
             margin-bottom: 15px;
@@ -10,7 +35,8 @@
             margin-bottom: 40px;
         }
     }
-    @media screen and (max-width: 700px) {
+
+    @include for-tablet-portrait-up(){
         &__box {
             height: auto;
         }
@@ -24,6 +50,17 @@
 
             &--inner{
                 padding: 0;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    @include for-tablet-small(){
+        &__sub{
+            flex-direction: column;
+            *{
+                width: 100%;
+                padding: 20px;
             }
         }
     }
@@ -181,6 +218,58 @@
             text-align: center;
         }
     }
+}
+
+.middle{
+        &__image{
+            &--gopro {
+                @include for-tablet-landscape-desktop(){
+                    top: 89px;
+                    right: -65px;
+                }
+            }
+                @include for-Ipad(){
+                    &--phone{
+                        top: 0;
+                    }
+                    &--vr{
+                        width: 260px;
+                    }
+                    &--gopro{
+                        top: 23px;
+                        right: 0;
+                    }
+                }
+
+                @include for-tablet-small(){
+                    &--gopro{
+                        right: -73px;
+                    }
+                }
+        }
+
+        &__content{
+            @include for-Ipad(){
+                margin: 20px 0;
+            }
+        }
+
+    @include for-Ipad(){
+        &__wrapper{
+            &--flex{
+                flex-wrap: wrap;
+                height: auto;
+            }
+        }
+    }
+
+    @media (max-width: 779px) {
+        &__article{
+            min-height: 220px;
+        }
+    }
+
+
 }
 
 

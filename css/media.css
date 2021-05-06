@@ -1,4 +1,4 @@
-@media screen and (max-width: 900px) {
+@media (max-width: 960px) {
   .modal__title {
     font-size: 38px;
     margin-bottom: 15px;
@@ -9,7 +9,7 @@
   }
 }
 
-@media screen and (max-width: 700px) {
+@media (max-width: 640px) {
   .modal__box {
     height: auto;
   }
@@ -23,6 +23,20 @@
   }
   .modal__content--inner {
     padding: 0;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal__sub {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .modal__sub * {
+    width: 100%;
+    padding: 20px;
   }
 }
 
@@ -157,6 +171,52 @@
     display: block;
     margin: 0 auto;
     text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .middle__image--gopro {
+    top: 89px;
+    right: -65px;
+  }
+}
+
+@media (max-width: 960px) {
+  .middle__image--phone {
+    top: 0;
+  }
+  .middle__image--vr {
+    width: 260px;
+  }
+  .middle__image--gopro {
+    top: 23px;
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .middle__image--gopro {
+    right: -73px;
+  }
+}
+
+@media (max-width: 960px) {
+  .middle__content {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .middle__wrapper--flex {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
+}
+
+@media (max-width: 779px) {
+  .middle__article {
+    min-height: 220px;
   }
 }
 /*# sourceMappingURL=media.css.map */
