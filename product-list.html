@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAKUTECH - My Cart</title>
+    <title>RAKUTECH - Available Products</title>
 
     <script src="js/header.js" async></script>
     <link rel="stylesheet" href="css/preset.css">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/middle.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/product-list.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
 </head>
@@ -90,69 +91,120 @@
     <nav class="header__bread-crumbs"> <a href="index.html" class="active">Home</a> <span> / </span> <a href="#" class="">My shopping cart</a> </nav>
     <div class="header__bottom-space"></div>
 
-    <!-- Cart Section Area -->
-    <section class="cart-section wrapper">
-        <div class="cart-section__table-header">
-            <div class="cart-section__table-header--product">PRODUCT</div>
-            <div class="cart-section__table-header--unit-price">UNIT PRICE</div>
-            <div class="cart-section__table-header--qty">QTY</div>
-            <div class="cart-section__table-header--price">PRICE</div>
-        </div>
-        <div class="cart-section__table-row">
-            <div class="cart-section__table-row--product">
-                <button class="cart-section__table-row--product--cancel-item-btn"><i class="fas fa-times"></i></button>
-                <img src="images/c04297141.png">
-                Philips Hue 7W BR30 Connected Downlight Lamp
-            </div>
-            <div class="cart-section__table-row--unit-price">$499</div>
-            <div class="cart-section__table-row--qty">
-                <button class="cart-section__table-row--qty--minus-btn" id="qty-minus-btn">-</button>
-                <div class="cart-section__table-row--qty--number">2</div>
-                <button class="cart-section__table-row--qty--plus-btn" id="qty-plus-btn">+</button>
-            </div>
-            <div class="cart-section__table-row--price">$998</div>
-        </div>
-        <div class="cart-section__table-row">
-            <div class="cart-section__table-row--product">
-                <button class="cart-section__table-row--product--cancel-item-btn"><i class="fas fa-times"></i></button>
-                <img src="images/macbook-pro.png">
-                Apple MacBook Pro
-            </div>
-            <div class="cart-section__table-row--unit-price">$499</div>
-            <div class="cart-section__table-row--qty">
-                <button class="cart-section__table-row--qty--minus-btn" id="qty-minus-btn">-</button>
-                <div class="cart-section__table-row--qty--number">2</div>
-                <button class="cart-section__table-row--qty--plus-btn" id="qty-plus-btn">+</button>
-            </div>
-            <div class="cart-section__table-row--price">$998</div>
-        </div>
-        <div class="cart-section__bottom">
-            <div class="cart-section__bottom__voucher">
-                <input type="text" value="Voucher code">
-                <button class="cart-section__bottom__voucher--redeem-btn">Redeem</button>
-            </div>
-            <div class="cart-section__bottom__total-table">
-                <div class="cart-section__bottom__total-table--subtotal">
-                    <span>Subtotal</span>
-                    <span>$ 998.00</span>
+    <!-- Product Listing Area -->
+    <section class="product-listing wrapper">
+        <section class="product-listing__filter">
+            <nav class="product-listing__filter__categories">
+                <h4>ACCESSORIES</h4>
+                <ul class="product-listing__filter__categories--category-list">
+                    <li><a href=""><span class="category">Apple Car</span><span class="available-stocks">2</span></a></li>
+                    <li><a href="" class="active"><span class="category">Air port & wireless</span><span class="available-stocks">48</span></a></li>
+                    <li><a href=""><span class="category">Cables & Docks</span><span class="available-stocks">14</span></a></li>
+                    <li><a href=""><span class="category">Cases & Films</span><span class="available-stocks">15</span></a></li>
+                    <li><a href=""><span class="category">Charging Devices</span><span class="available-stocks">23</span></a></li>
+                    <li><a href=""><span class="category">Connected Home</span><span class="available-stocks">1</span></a></li>
+                    <li><a href=""><span class="category">Headphones</span><span class="available-stocks">95</span></a></li>
+                </ul>                
+            </nav>
+            <section class="product-listing__filter__prices">
+                <h4>PRICES</h4>
+                <div class="product-listing__filter__prices__ranger-text">
+                    <span class="product-listing__filter__prices__ranger-text--ranger-label">Ranger: </span><span id="min-price">$13.99</span>&nbsp-&nbsp<span id="max-price">$25.99</span>
                 </div>
-                <div class="cart-section__bottom__total-table--shipping-fee">
-                    <span>Shipping fee</span>
-                    <span>$ 20.00</span>
+                <div>
+                    <span id="price-range-dim"></span><span id="price-range-min"></span><span id="price-range-max"></span>
                 </div>
-                <div class="cart-section__bottom__total-table--coupon">
-                    <span>Coupon</span>
-                    <span>No</span>
-                </div> 
-                <div class="cart-section__bottom__total-table--total">
-                    <span>Total</span>
-                    <span>$ 1,018.00</span>
+            </section>
+            <section class="product-listing__filter__color-picker">
+                <h4>COLOR</h4>
+                <div id="color-set">
+                    <i id="color-pick-blue"></i>
+                    <i id="color-pick-red"></i>
+                    <i id="color-pick-black"></i>
+                    <i id="color-pick-yellow"></i>
+                    <i id="color-pick-pink"></i>
+                    <i id="color-pick-gray"></i>
                 </div>
-                <div class="cart-section__bottom__total-table--check-out">
-                    <button class="cart-section__bottom__total-table--check-out--btn">Check Out</button>
-                </div>
-            </div>
-        </div>
+            </section>
+            <nav class="product-listing__filter--brand">
+                <h4>BRAND</h4>
+                <ul>
+                    <li><a href=""><span>Apple</span> <span class="available-stocks">99</span></a></li>
+                    <li><a href="" class="active"><span>LG</span> <span class="available-stocks">99</span></a></li>
+                    <li><a href=""><span>Samsung</span> <span class="available-stocks">99</span></a></li>
+                    <li><a href=""><span>Siemens</span> <span class="available-stocks">99</span></a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="product-listing__products">
+            <!--
+            <section id="bottom2" class="bottom2">
+                <section class="wrapper">
+                    <section class="bottom2__content">
+                        <h2 class="bottom2__product">iPhone 6 Plus</h1>
+                        <p class="bottom2__description">Performance and design. Taken right to the edge.</p>
+                        <a href="#" class="bottom2__button">Shop Now</a>
+                    </section>
+        
+                    <img class="bottom2__image" src="images/iPhone6_Big.png" alt="iphone">
+                </section>
+            </section>
+            -->
+            <section class="product-listing__products__sort">
+                <span id="filter-result-number">13 Items</span>
+                <label id="sort-by-label">Sort By</label>
+                <select name="" id="product-listing--sort-by">
+                    <option value="name">Name</option>
+                    <option value="price">Price</option>
+                </select>
+                <label id="items-per-page">Show</label>
+                <select name="" id="product-listing--items-per-page">
+                    <option value="12">12</option>
+                    <option value="24">24</option>
+                </select>
+                <button class="product-listing__products--grid-btn"><i class="fas fa-th"></i></button>
+                <button class="product-listing__products--list-btn"><i class="fas fa-bars"></i></button>
+            </section>
+            <!--
+            <section class="main__product--upper">
+                <section class="main__product--image">
+                    <img class="main__product--image--big" src="images/black_hero_retina_1800x1800_V2.png" alt="Beat Solo 2 on Ear Headphones - Black">
+                    <footer class="main__product--thumbnail">
+                        <img src="images/_0053_rgb_MP582-RGB-bttm_V2.png" alt="Beat Solo 2 on Ear Headphones - Black">
+                        <img src="images/_0066_rgb_MNEN2-RGB-side_V2.png" alt="Beat Solo 2 on Ear Headphones - Black">
+                        <img src="images/Rectangle_5.png" alt="Beat Solo 2 on Ear Headphones - Black">
+                        <img src="images/151101_bbd_sodc_blk_06.png" alt="Beat Solo 2 on Ear Headphones - Black">
+                    </footer>
+                </section>
+                <section class="main__product--details">
+                    <h3 class="main__product--title">Beats Solo2 On Ear Headphones - Black</h3>
+                    <section class="main__product--review">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>0 Reviews</span>
+                        <a href="#" class="main__product--submit">Submit a review</a>
+                    </section>
+                    <hr />
+                    <section class="bottom1__card__footer main__product--price">
+                        <span class="bottom1__card__price">$499</span>
+                        <span class="bottom1__card__price bottom1__card__price--before">$599</span>
+                    </section>
+
+                    <section class="main__product--bottom">
+                        <section class="main__product--cart">
+                            <a href="#" class="main__product--add-to-cart"><i class="fas fa-shopping-cart"></i>Add to Cart</a>
+                            <i class="far fa-heart main__product--heart"></i>
+                        </section>
+                    </section>
+                
+                </section>
+                
+            </section>
+            -->
+        </section>
     </section>
 
     <!-- Footer Area -->
