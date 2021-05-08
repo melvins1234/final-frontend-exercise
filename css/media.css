@@ -219,4 +219,225 @@
     min-height: 220px;
   }
 }
+
+@media (max-width: 480px) {
+  .bottom1__menu {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .bottom2__content {
+    margin-left: 20px;
+  }
+  .bottom2__image {
+    right: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .bottom2__image {
+    top: 0;
+    width: 400px;
+    right: -60px;
+  }
+  .bottom2__content {
+    width: 350px;
+  }
+  .bottom2__product {
+    font-size: 54px;
+  }
+  .bottom2__description {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bottom2 > .wrapper {
+    height: auto;
+  }
+  .bottom2__image {
+    display: none;
+  }
+  .bottom2__content {
+    padding: 100px 20px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom2__product {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  .bottom2__description {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 960px) {
+  .bottom3 > .wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .bottom3__box {
+    width: 260px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bottom4__news__image {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 960px) {
+  .bottom4__news {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .bottom4__news__box {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom4__news__image {
+    margin: 0 0 20px 0;
+  }
+  .bottom4__news__box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .bottom4__news__holder {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom4 {
+    padding: 0 10px;
+  }
+  .bottom4__title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 960px) {
+  .bottom4__search {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .footer__top-outer-container, .footer__middle, .footer__bottom-outer-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer__top--contact-us {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer__top {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .footer__bottom--fund-transfers {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer__top > div {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer__middle {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer__middle--site-map {
+    -webkit-box-flex: 23%;
+        -ms-flex: 23%;
+            flex: 23%;
+  }
+}
+
+@media (max-width: 540px) {
+  .footer__middle--site-map {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    border-bottom: 2px solid #22262A;
+    cursor: pointer;
+  }
+  .footer__middle ul {
+    display: none;
+    padding: 0 0 20px 10px;
+  }
+  .footer__nav--show {
+    display: block !important;
+  }
+  .footer h5 {
+    padding: 20px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer h5 i {
+    display: block;
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+  }
+  .footer__arrow h5 i {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+}
 /*# sourceMappingURL=media.css.map */

@@ -410,6 +410,7 @@ a{
         margin-top: 31px;
         ul{
             display: flex;
+            flex-wrap: wrap;
         }
     }
 
@@ -433,7 +434,7 @@ a{
     &__products{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
         margin-bottom: 60px;
 
         &--margin{
@@ -612,7 +613,7 @@ a{
 
     &__box{
         text-align: center;
-        margin: 0 35px;
+        margin: 0 35px 30px;
     }
 
     &__title{
@@ -635,6 +636,7 @@ a{
 }
 
 .bottom4{
+    margin-bottom: 141px;
     & > .wrapper{
         flex-direction: column;
     }
@@ -674,8 +676,9 @@ a{
 
         &__title{
             font-size: 18px;
-            line-height: 43px;
             font-weight: bold;
+            margin: 10px 0;
+            line-height: 22px;
             
             &--font{
                 font-size: 14px;
@@ -751,38 +754,47 @@ a{
 
 /* footer.scss merged. *start* */
 .footer {
+
     h5{
-        font-size: 1.1em;
+        font-size: 18px;
+        line-height: 28px;
         font-weight: bold;
-        padding: 20px 0;
+        padding: 25px 0;
+
+        i{
+            display: none;
+        }
     }
     &__top-outer-container{
         border-top: 3px solid #F6F7F8;
         margin-top:20px;
+        padding: 35px 0 0;
     }
     &__top{
         display: flex;
-        flex-wrap: wrap;
         border-bottom: 3px solid #F6F7F8;
-        line-height: 160%;
-        h5{
-            padding-top: 10px;
+        line-height: 20px;
+        font-size: 12px;
+        padding-bottom: 68px;
+        justify-content: space-between;
+
+        &--title{
+            font-size: 32px;
+            line-height: 39px;
+            font-weight: bold;
+            opacity: 40%;
+            padding-bottom: 40px;
         }
+
         &>div{
-            padding: 30px 120px 30px 0;
-        }
-        &--brand-description{
+            max-width: 269px;
+            width: 100%;
             flex: 0 0 33.33%;
-            h3{
-                font-size: 1.7em;
-                font-weight: bold;
-                opacity: 40%;
-                padding-bottom: 35px;
-            }
             
         }
+        &--brand-description{
+        }
         &--social-media{
-            flex: 0 0 33.33%;
             div{
                 i{
                     padding: 30px 25px 0 0;
@@ -796,16 +808,15 @@ a{
             }
         }
         &--contact-us{
-            flex: 0 0 33.33%;
+            margin: 0 120px 0 0;
         }
     }
     &__middle{
         display: flex;
-        flex-wrap: wrap;
+        justify-content: space-evenly;
         padding: 30px 0 0;
         &--site-map{
             flex:1;
-            min-width: 150px;
             ul{
                 li{
                     line-height: 220%;;
