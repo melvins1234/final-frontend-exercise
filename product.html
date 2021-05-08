@@ -31,24 +31,78 @@
                 <div class="header__top--search-icon"><i class="fas fa-search"></i></div>
             </div>
             <div class="header--brand">
-                    <h1>RAKU<span>TECH</span></h1>
+                <h1>RAKU<span>TECH</span></h1>
             </div>
-            <nav class="header__main-nav">
-                <ul>
-                    <li>
-                        <div class="header__main-nav__arrow-guide">
-                            <i id="main-nav-arrow" class="header__main-nav__arrow-guide--arrow-up"></i>
-                        </div>
-                        <a href="index.html" class="header__main-nav--home" onmouseover="moveArrow('14px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">
-                            HOME
-                        </a>
-                    </li>
-                    <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">STORE</a></li>
-                    <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPHONE</a></li>
-                    <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPAD</a></li>
-                    <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">MACBOOK</a></li>
-                    <li><a href="product.html" class="header__main-nav--accessories active" onmouseover="moveArrow('570px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">ACCESSORIES</a></li>
-                </ul>
+            <nav class="header__main-nav header__mobile">
+                <section class="header__nav">
+                    <button type="button" class="header__main-nav--toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+    
+                    <div class="header--brand header__mobile--logo">
+                        <h1>RAKU<span>TECH</span></h1>
+                    </div>
+    
+                    <div class="header__top--cart header__mobile--cart">
+                        <a href="cart.html" class=""><i class="fas fa-shopping-basket"></i></a>
+                    </div>
+                </section>
+
+                <secition class="header__nav-bar">
+                    <ul>
+                        <li>
+                            <div class="header__main-nav__arrow-guide">
+                                <i id="main-nav-arrow" class="header__main-nav__arrow-guide--arrow-up"></i>
+                            </div>
+                            <a href="index.html" class="header__main-nav--home active" onmouseover="moveArrow('14px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">
+                                HOME
+                            </a>
+                            <span class="header__main-nav--carret"><i class="fas fa-caret-down"></i></span>
+                            
+    
+                            <nav class="header__mega-menu">
+                                <div class="header__mega-menu__products">
+                                    <h5>Category</h5>
+                                    <ul>
+                                        <li>Airport & Wireless</li>
+                                        <li>AppleCare</li>
+                                        <li>Bags, Shells & Sleeves</li>
+                                        <li>Business & Security</li>
+                                        <li>Cable & Docs</li>
+                                        <li>Cameras & Video</li>
+                                        <li>Car & Travel</li>
+                                        <li>Cases & Films</li>
+                                    </ul>
+                                </div>
+                                <div class="header__mega-menu__accessories-1">
+                                    <h5>Category</h5>
+                                    <ul>
+                                        <li>Charging Devices</li>
+                                        <li>Connected Home</li>
+                                        <li>Device Care</li>
+                                        <li>Display & Graphic</li>
+                                        <li>Fitness & Sport</li>
+                                        <li>Headphones</li>
+                                        <li>HealthKit</li>
+                                    </ul>
+                                </div>
+                                <div class="header__mega-menu__accessories-2">
+                                    <h5>Category</h5>
+                                    <ul>
+                                        <li>Mice & Keyboards</li>
+                                        <li>Music Creation</li>
+                                        <li>Networking & Server</li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </li>
+                        <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">STORE</a></li>
+                        <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPHONE</a></li>
+                        <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPAD</a></li>
+                        <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">MACBOOK</a></li>
+                        <li><a href="product.html" class="header__main-nav--accessories" onmouseover="moveArrow('570px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">ACCESSORIES</a></li>
+                    </ul>
+                </secition>
             </nav>
             <nav class="header__drop-down-nav" onmouseover="displayHeaderDropDownMenu()" onmouseout="slowlyHideHeaderDropDownMenuNow()">
                 <div class="header__drop-down-nav__products">
@@ -359,10 +413,11 @@
     <!-- Footer Area -->
     <footer class="footer">
         <div class="footer__top-outer-container">
+ 
             <div class="footer__top wrapper">
                 <div class="footer__top--brand-description">
-                    <h3>RAKUTECH</h3>
-                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe cum hic eligendi a obcaecati voluptatum at maxime, dicta eaque.</span>
+                    <h3 class="footer__top--title">RAKUTECH</h3>
+                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.Since the 1500s, when an unknown printer.</span>
                 </div>
                 <div class="footer__top--social-media">
                     <h5 class="footer--heading">Follow Us</h5>
@@ -382,7 +437,7 @@
         </div>
         <div class="footer__middle wrapper">
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Information</h5>
+                <h5 class="footer--heading">Information <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -391,7 +446,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Service</h5>
+                <h5 class="footer--heading">Service <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -400,7 +455,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Extras</h5>
+                <h5 class="footer--heading">Extras <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -409,7 +464,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">My Account</h5>
+                <h5 class="footer--heading">My Account <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -418,7 +473,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Useful Links</h5>
+                <h5 class="footer--heading">Useful Links <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -427,7 +482,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Our Offers</h5>
+                <h5 class="footer--heading">Our Offers <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -450,5 +505,7 @@
         </div>
     </footer>
     
+    <script src="js/header.js" async></script>
+    <script src="js/plugin.js"></script>
 </body>
 </html>
