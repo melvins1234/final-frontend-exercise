@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAKUTECH - Available Products</title>
+
+    <script src="js/header.js" async></script>
+    <script src="js/assignGrade.js" async></script>
+    <link rel="stylesheet" href="css/preset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/middle.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/product-list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+</head>
+
+<body>
+
+    <!-- Header Area -->
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__top">
+                <span>EN&nbsp; <i class="fas fa-caret-down"></i></span>
+                <span>USD&nbsp; <i class="fas fa-caret-down"></i> </span>
+                <div class="header__top--user-profile"><i class="far fa-user"></i> My Profile</div>
+                <div class="header__top--cart">
+                    <a href="cart.html" class="active"><i class="fas fa-shopping-basket"></i> 0 Items <span>$0.00</span></a>
+                </div>
+                <div class="header__top--search-icon"><i class="fas fa-search"></i></div>
+            </div>
+            <div class="header--brand">
+                    <h1>RAKU<span>TECH</span></h1>
+            </div>
+            <nav class="header__main-nav">
+                <ul>
+                    <li>
+                        <div class="header__main-nav__arrow-guide">
+                            <i id="main-nav-arrow" class="header__main-nav__arrow-guide--arrow-up"></i>
+                        </div>
+                        <a href="index.html" class="header__main-nav--home" onmouseover="moveArrow('14px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">
+                            HOME
+                        </a>
+                    </li>
+                    <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">STORE</a></li>
+                    <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPHONE</a></li>
+                    <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPAD</a></li>
+                    <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">MACBOOK</a></li>
+                    <li><a href="product.html" class="header__main-nav--accessories" onmouseover="moveArrow('570px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">ACCESSORIES</a></li>
+                </ul>
+            </nav>
+            <nav class="header__drop-down-nav" onmouseover="displayHeaderDropDownMenu()" onmouseout="slowlyHideHeaderDropDownMenuNow()">
+                <div class="header__drop-down-nav__products">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Airport & Wireless</li>
+                        <li>AppleCare</li>
+                        <li>Bags, Shells & Sleeves</li>
+                        <li>Business & Security</li>
+                        <li>Cable & Docs</li>
+                        <li>Cameras & Video</li>
+                        <li>Car & Travel</li>
+                        <li>Cases & Films</li>
+                    </ul>
+                </div>
+                <div class="header__drop-down-nav__accessories-1">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Charging Devices</li>
+                        <li>Connected Home</li>
+                        <li>Device Care</li>
+                        <li>Display & Graphic</li>
+                        <li>Fitness & Sport</li>
+                        <li>Headphones</li>
+                        <li>HealthKit</li>
+                    </ul>
+                </div>
+                <div class="header__drop-down-nav__accessories-2">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Mice & Keyboards</li>
+                        <li>Music Creation</li>
+                        <li>Networking & Server</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <nav class="header__bread-crumbs"> <a href="index.html" class="active">Home</a> <span> / </span> <a href="index.html" class="active">Accessories</a> <span> / </span> Beat Solo 2 on Ear Headphones - Black </nav>
+    <div class="header__bottom-space"></div>
+
+    <!-- Product Listing Area -->
+    <section class="product-listing wrapper">
+        <!-- Product Listing - left side - Filter -->
+        <section class="product-listing__filter">
+            <nav class="product-listing__filter__categories">
+                <h4>ACCESSORIES</h4>
+                <ul class="product-listing__filter__categories--category-list">
+                    <li><a href=""><span class="category">Apple Car</span><span class="available-stocks">2</span></a></li>
+                    <li><a href="" class="active"><span class="category">Air port & wireless</span><span class="available-stocks">48</span></a></li>
+                    <li><a href=""><span class="category">Cables & Docks</span><span class="available-stocks">14</span></a></li>
+                    <li><a href=""><span class="category">Cases & Films</span><span class="available-stocks">15</span></a></li>
+                    <li><a href=""><span class="category">Charging Devices</span><span class="available-stocks">23</span></a></li>
+                    <li><a href=""><span class="category">Connected Home</span><span class="available-stocks">1</span></a></li>
+                    <li><a href=""><span class="category">Headphones</span><span class="available-stocks">95</span></a></li>
+                </ul>                
+            </nav>
+            <section class="product-listing__filter__prices">
+                <h4>PRICES</h4>
+                <div class="product-listing__filter__prices__ranger-text">
+                    <span class="product-listing__filter__prices__ranger-text--ranger-label">Ranger: </span><span id="min-price">$13.99</span>&nbsp-&nbsp<span id="max-price">$25.99</span>
+                </div>
+                <!-- price slider -->
+                <div class="price-slider">
+                  <input value="25000" min="0" max="120000" step="500" type="range"/>
+                  <input value="50000" min="0" max="120000" step="500" type="range"/>
+                </div>
+
+            </section>
+            <section class="product-listing__filter__color-picker">
+                <h4>COLOR</h4>
+                <div id="color-set">
+                    <i id="color-pick-blue"></i>
+                    <i id="color-pick-red"></i>
+                    <i id="color-pick-black"></i>
+                    <i id="color-pick-yellow"></i>
+                    <i id="color-pick-pink"></i>
+                    <i id="color-pick-gray"></i>
+                </div>
+            </section>
+            <nav class="product-listing__filter--brand">
+                <h4>BRAND</h4>
+                <ul>
+                    <li><a href=""><span>Apple</span> <span class="available-stocks">99</span></a></li>
+                    <li><a href="" class="active"><span>LG</span> <span class="available-stocks">99</span></a></li>
+                    <li><a href=""><span>Samsung</span> <span class="available-stocks">99</span></a></li>
+                    <li><a href=""><span>Siemens</span> <span class="available-stocks">99</span></a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- Product Listing - right side -->
+        <section class="product-listing__products">
+            <section id="product-listing__products__featured" class="product-listing__products__featured">
+                    <section class="product-listing__products__featured__text">
+                        <h2 class="">iPhone 8</h1>
+                        <p class="">Performance and design. Taken right to the edge.</p>
+                        <a href="#" class="product-listing__products__featured__text--link">Shop Now</a>
+                    </section>
+        
+                    <img class="product-listing__products__featured--img" src="images/iPhone6_Big.png" alt="iphone">
+            </section>
+            
+            <nav class="product-listing__products__sort">
+                <nav class="product-listing__products__sort__options">
+                    <span id="filter-result-number">13</span> Items
+                    <label id="sort-by-label">Sort By</label>
+                    <select name="" id="product-listing--sort-by">
+                        <option value="name">Name</option>
+                        <option value="price">Price</option>
+                    </select>
+                    <label id="items-per-page">Show</label>
+                    <select name="" id="product-listing--items-per-page">
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                    </select>
+                </nav>
+                <nav class="product-listing__products__sort__display-choices">
+                    <button id="display-as-grid" class="active"><i class="fas fa-th"></i></button>
+                    <button id="display-as-list"><i class="fas fa-bars"></i></button>
+                </nav>
+            </nav>
+            
+            <!-- Card sections -->
+            <section class="product-listing__products__card">
+                <section class="product-listing__products__card--image">
+                    <span>HOT</span>
+                    <img src="images/macbook-pro.png" alt="iMac">
+                </section>
+                <section class="product-listing__products__card__details">
+                    <h3 class="product-listing__products__card__details--title">Beats Solo2 On Ear Headphones - Black</h3>
+                    <section class="product-listing__products__card__details--review">
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star"></i>
+                        <span>0 Reviews</span>
+                        <a href="#" class="main__product--submit">Submit a review</a>
+                    </section>
+                    <hr />
+                    <span class="product-listing__products__card__details--price">$499
+                        <span class="product-listing__products__card__details--price--before">$599</span>
+                    </span>
+                    <p>Elit officiis exercitationem temporibus perferendis atque consequatur, molestias tempore iusto expedita nisi natus nulla quam quia culpa amet eligendi? Mollitia assumenda fugit cupiditate! Quod corrupti dicta, iure velit voluptatem eaque. Cum, placeat at! Ratione alias hic illum exercitationem sint esse.</p>
+                    <footer>
+                        <button id="product-listing--add-to-cart-btn"><i class="fas fa-shopping-cart"></i>Add to Cart</button>
+                        <button id="product-listing--like-btn"><i class="far fa-heart main__product--heart"></i></button>
+                    </footer>
+                </section>
+            </section>
+
+            <section class="product-listing__products__card">
+                <section class="product-listing__products__card--image">
+                    <span>HOT</span>
+                    <img src="images/macbook-pro.png" alt="iMac">
+                </section>
+                <section class="product-listing__products__card__details">
+                    <h3 class="product-listing__products__card__details--title">Beats Solo2 On Ear Headphones - Black</h3>
+                    <section class="product-listing__products__card__details--review">
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star"></i>
+                        <span>0 Reviews</span>
+                        <a href="#" class="main__product--submit">Submit a review</a>
+                    </section>
+                    <hr />
+                    <span class="product-listing__products__card__details--price">$499
+                        <span class="product-listing__products__card__details--price--before">$599</span>
+                    </span>
+                    <p>Elit officiis exercitationem temporibus perferendis atque consequatur, molestias tempore iusto expedita nisi natus nulla quam quia culpa amet eligendi? Mollitia assumenda fugit cupiditate! Quod corrupti dicta, iure velit voluptatem eaque. Cum, placeat at! Ratione alias hic illum exercitationem sint esse.</p>
+                    <footer>
+                        <button id="product-listing--add-to-cart-btn"><i class="fas fa-shopping-cart"></i>Add to Cart</button>
+                        <button id="product-listing--like-btn"><i class="far fa-heart main__product--heart"></i></button>
+                    </footer>
+                </section>
+            </section>
+
+            <section class="product-listing__products__card">
+                <section class="product-listing__products__card--image">
+                    <span>HOT</span>
+                    <img src="images/macbook-pro.png" alt="iMac">
+                </section>
+                <section class="product-listing__products__card__details">
+                    <h3 class="product-listing__products__card__details--title">Beats Solo2 On Ear Headphones - Black</h3>
+                    <section class="product-listing__products__card__details--review">
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star"></i>
+                        <span>0 Reviews</span>
+                        <a href="#" class="main__product--submit">Submit a review</a>
+                    </section>
+                    <hr />
+                    <span class="product-listing__products__card__details--price">$499
+                        <span class="product-listing__products__card__details--price--before">$599</span>
+                    </span>
+                    <p>Elit officiis exercitationem temporibus perferendis atque consequatur, molestias tempore iusto expedita nisi natus nulla quam quia culpa amet eligendi? Mollitia assumenda fugit cupiditate! Quod corrupti dicta, iure velit voluptatem eaque. Cum, placeat at! Ratione alias hic illum exercitationem sint esse.</p>
+                    <footer>
+                        <button id="product-listing--add-to-cart-btn"><i class="fas fa-shopping-cart"></i>Add to Cart</button>
+                        <button id="product-listing--like-btn"><i class="far fa-heart main__product--heart"></i></button>
+                    </footer>
+                </section>
+            </section>
+
+            <section class="product-listing__products__card">
+                <section class="product-listing__products__card--image">
+                    <span>HOT</span>
+                    <img src="images/macbook-pro.png" alt="iMac">
+                </section>
+                <section class="product-listing__products__card__details">
+                    <h3 class="product-listing__products__card__details--title">Beats Solo2 On Ear Headphones - Black</h3>
+                    <section class="product-listing__products__card__details--review">
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star"></i>
+                        <span>0 Reviews</span>
+                        <a href="#" class="main__product--submit">Submit a review</a>
+                    </section>
+                    <hr />
+                    <span class="product-listing__products__card__details--price">$499
+                        <span class="product-listing__products__card__details--price--before">$599</span>
+                    </span>
+                    <p>Elit officiis exercitationem temporibus perferendis atque consequatur, molestias tempore iusto expedita nisi natus nulla quam quia culpa amet eligendi? Mollitia assumenda fugit cupiditate! Quod corrupti dicta, iure velit voluptatem eaque. Cum, placeat at! Ratione alias hic illum exercitationem sint esse.</p>
+                    <footer>
+                        <button id="product-listing--add-to-cart-btn"><i class="fas fa-shopping-cart"></i>Add to Cart</button>
+                        <button id="product-listing--like-btn"><i class="far fa-heart main__product--heart"></i></button>
+                    </footer>
+                </section>
+            </section>
+
+            <section class="product-listing__products__card">
+                <section class="product-listing__products__card--image">
+                    <span>HOT</span>
+                    <img src="images/macbook-pro.png" alt="iMac">
+                </section>
+                <section class="product-listing__products__card__details">
+                    <h3 class="product-listing__products__card__details--title">Beats Solo2 On Ear Headphones - Black</h3>
+                    <section class="product-listing__products__card__details--review">
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star"></i>
+                        <span>0 Reviews</span>
+                        <a href="#" class="main__product--submit">Submit a review</a>
+                    </section>
+                    <hr />
+                    <span class="product-listing__products__card__details--price">$499
+                        <span class="product-listing__products__card__details--price--before">$599</span>
+                    </span>
+                    <p>Elit officiis exercitationem temporibus perferendis atque consequatur, molestias tempore iusto expedita nisi natus nulla quam quia culpa amet eligendi? Mollitia assumenda fugit cupiditate! Quod corrupti dicta, iure velit voluptatem eaque. Cum, placeat at! Ratione alias hic illum exercitationem sint esse.</p>
+                    <footer>
+                        <button id="product-listing--add-to-cart-btn"><i class="fas fa-shopping-cart"></i>Add to Cart</button>
+                        <button id="product-listing--like-btn"><i class="far fa-heart main__product--heart"></i></button>
+                    </footer>
+                </section>
+            </section>
+
+            <section class="product-listing__products__card">
+                <section class="product-listing__products__card--image">
+                    <span>HOT</span>
+                    <img src="images/macbook-pro.png" alt="iMac">
+                </section>
+                <section class="product-listing__products__card__details">
+                    <h3 class="product-listing__products__card__details--title">Beats Solo2 On Ear Headphones - Black</h3>
+                    <section class="product-listing__products__card__details--review">
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star glow"></i>
+                        <i class="fas fa-star"></i>
+                        <span>0 Reviews</span>
+                        <a href="#" class="main__product--submit">Submit a review</a>
+                    </section>
+                    <hr />
+                    <span class="product-listing__products__card__details--price">$499
+                        <span class="product-listing__products__card__details--price--before">$599</span>
+                    </span>
+                    <p>Elit officiis exercitationem temporibus perferendis atque consequatur, molestias tempore iusto expedita nisi natus nulla quam quia culpa amet eligendi? Mollitia assumenda fugit cupiditate! Quod corrupti dicta, iure velit voluptatem eaque. Cum, placeat at! Ratione alias hic illum exercitationem sint esse.</p>
+                    <footer>
+                        <button id="product-listing--add-to-cart-btn"><i class="fas fa-shopping-cart"></i>Add to Cart</button>
+                        <button id="product-listing--like-btn"><i class="far fa-heart main__product--heart"></i></button>
+                    </footer>
+                </section>
+            </section>
+
+            <!-- pagination footer -->
+            <nav class="product-listing__products__pagination">
+                <ol>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="" class="active">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                </ol>
+            </nav>
+        </section>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="footer">
+        <div class="footer__top-outer-container">
+            <div class="footer__top wrapper">
+                <div class="footer__top--brand-description">
+                    <h3>RAKUTECH</h3>
+                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe cum hic eligendi a obcaecati voluptatum at maxime, dicta eaque.</span>
+                </div>
+                <div class="footer__top--social-media">
+                    <h5 class="footer--heading">Follow Us</h5>
+                    <span>Totam ullam reiciendis corrupti libero placeat aut. Earum quis expedita.</span>
+                    <div><i class="fab fa-facebook-f"></i> <i class="fab fa-twitter"></i></div>
+                </div>
+                <div class="footer__top--contact-us">
+                    <h5 class="footer--heading">Contact Us</h5>
+                    <span>
+                        My Company, 4578 Marmora Road, Glasgow<br>
+                        D04 89GR<br>
+                        Call us now: 0123-456-789<br>
+                        Email: support@whatever.com
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__middle wrapper">
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Information</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Service</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Extras</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">My Account</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Useful Links</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer__middle--site-map">
+                <h5 class="footer--heading">Our Offers</h5>
+                <ul>
+                    <li>About Us</li>
+                    <li>Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom-outer-container">
+            <div class="footer__bottom wrapper">
+                <span>© 2018 Ecommerce theme by www.bisenbaev.com</span>
+                <div class="footer__bottom--fund-transfers">
+                    <img src="images/Western-union.png" alt="">
+                    <img src="images/Group 19.png" alt="">
+                    <img src="images/Paypal.png" alt="">
+                    <img src="images/visa.jpg" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+</body>
+</html>
