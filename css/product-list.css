@@ -3,6 +3,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .product-listing__filter {
@@ -324,12 +326,26 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
 }
 
+.product-listing__products__sort div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .product-listing__products__sort__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   padding: 2px 15px;
   margin-right: auto;
 }
@@ -396,6 +412,7 @@
 }
 
 .product-listing__products__card--image {
+  position: relative;
   border: 3px solid #f6f7f8;
   border-radius: 5px;
   min-width: 250px;
@@ -670,5 +687,62 @@ input[type=range]::-ms-thumb {
   border-radius: 25px;
   background: #a1d0ff;
   cursor: pointer;
+}
+
+@media (max-width: 961px) {
+  .header__bread-crumbs {
+    margin-top: 150px;
+  }
+  section.product-listing__products__featured {
+    border-radius: unset;
+  }
+  .product-listing__products__sort {
+    border-radius: unset;
+  }
+}
+
+@media (max-width: 481px) {
+  .product-listing__products__sort__options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0px 0 10px;
+    width: 100%;
+  }
+  .product-listing__products__sort__options div {
+    margin-top: 20px;
+  }
+  .product-listing__products__sort__options div label {
+    padding: 0 !important;
+  }
+  .product-listing__products__sort__display-choices {
+    margin-left: auto;
+  }
+  .product-listing__products__card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 50px;
+    width: 100%;
+  }
+  .product-listing__products__card--image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+  }
+  .product-listing__products__card__details {
+    padding: 0 30px;
+  }
 }
 /*# sourceMappingURL=product-list.css.map */
