@@ -1,6 +1,7 @@
 .product-listing{
     font-size: 0.9em;
     display: flex;
+    flex-wrap: wrap;
     &__filter{
         flex: 1 1 25%;
         & > nav,& > section {
@@ -272,16 +273,22 @@
             background-color: #f6f7f8;
             border-radius: 5px;
             display: flex;
+            flex-wrap: wrap;
             align-items: baseline;
+            div{
+                width: fit-content;
+            }
             &__options{
+                display: flex;
+                align-items: baseline;
                 padding: 2px 15px;
+                margin-right: auto;
                 label#sort-by-label{
                     padding: 0 8px 0 30px;
                 }
                 label#items-per-page{
                     padding: 0 8px 0 30px;
                 }
-                margin-right: auto;
                 select{
                     border:1px solid #ebebeb;
                     background-color: inherit;
@@ -324,6 +331,7 @@
             position: relative;
             border-bottom: 3px #f6f7f8 solid;
             &--image{
+                position: relative;
                 border: 3px solid #f6f7f8;
                 border-radius: 5px;
                 min-width: 250px;
@@ -552,3 +560,48 @@ input {
     background: #a1d0ff;
     cursor: pointer;
   }
+
+@media (max-width:961px)  { 
+    .header__bread-crumbs{
+        margin-top: 150px;
+    }
+    section.product-listing__products__featured{
+        border-radius: unset;
+    }
+    .product-listing__products__sort{
+        border-radius: unset;
+    }
+}
+@media (max-width:481px)  { 
+    .product-listing__products__sort__options{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 0 10px;
+        width: 100%;
+        div{
+            margin-top: 20px;
+            label{
+                padding: 0 !important;
+            }
+        }
+    }
+
+    .product-listing__products__sort__display-choices{
+        margin-left: auto;
+    }
+    .product-listing__products__card{
+        flex-direction: column;
+        justify-content:center;
+        padding-top: 50px;
+        width: 100%;
+        &--image{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+        }
+        &__details{
+            padding: 0 30px;
+        }
+    }
+}
