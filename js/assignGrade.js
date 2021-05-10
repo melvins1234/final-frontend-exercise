@@ -15,6 +15,7 @@ function displayGrade(){
 
 displayGrade();
 
+if(document.querySelector('#color-pick-blue')){
 var getID = document.getElementById('main-nav-arrow');
 var getClassName =  document.getElementsByClassName('header__drop-down-nav__accessories-1');
 var getQuery = document.querySelector('#color-pick-blue');
@@ -27,3 +28,13 @@ changeBGColor[0].style.background = "orange";
 var hola = document.createElement('div');
 hola.textContent = "hola";
 getQuery.appendChild(hola);
+}
+
+if(document.getElementsByClassName("main__product--image--big")){
+    var blueOption = document.getElementsByClassName("main__product--blue");
+
+    
+    blueOption.addEventListener("click", function(){
+        document.getElementsByClassName("main__product--image--big").style.background = "#006CFF";
+    });
+}

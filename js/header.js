@@ -62,3 +62,4 @@ function hideHeaderDropDownMenuNow(){
     headerDropDownMenu[0].style.display = "none";
     arrowElement.style.display = "none";
 }
+
