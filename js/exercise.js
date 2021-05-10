@@ -9,3 +9,12 @@ let assignGrade = (grade) =>{
 
 console.log(assignGrade(89));
 console.log(assignGrade(90));
+
+
+// Get 5 elements using ID
+console.log(document.getElementById("modal"));
+console.log(document.getElementById("bottom1"));
+console.log(document.getElementById("bottom2"));
+console.log(document.getElementById("bottom3"));
+console.log(document.getElementById("search"));
+
