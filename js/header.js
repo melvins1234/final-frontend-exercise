@@ -16,7 +16,6 @@ var delayTimeOut;
 delayInProgress = false;
 arrowElement = document.getElementById("main-nav-arrow");
 headerDropDownMenu = document.getElementsByClassName("header__drop-down-nav");
-console.log("initialized")
 
 /* if script is still loading try this:
 ** (needs onload property on body tag)

@@ -14,3 +14,16 @@ function displayGrade(){
 }
 
 displayGrade();
+
+var getID = document.getElementById('main-nav-arrow');
+var getClassName =  document.getElementsByClassName('header__drop-down-nav__accessories-1');
+var getQuery = document.querySelector('#color-pick-blue');
+var getQueryAll = document.querySelectorAll('li, a');
+console.log(getQueryAll);
+var changeBGColor = document.getElementsByClassName('product-listing__filter--brand');
+
+changeBGColor[0].style.background = "orange";
+
+var hola = document.createElement('div');
+hola.textContent = "hola";
+getQuery.appendChild(hola);
