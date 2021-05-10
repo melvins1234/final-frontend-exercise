@@ -43,3 +43,7 @@ let footer = document.createElement("footer");
 footer.innerHTML = '<section class="wrapper"><h1>Hello World!</section>';
 document.querySelector(".footer").appendChild(footer);
 
+footer.onmouseenter(function(){
+    alert(1)
+});
+
