@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAKUTECH</title>
 
+    <script src="js/header.js" async></script>
     <link rel="stylesheet" href="css/preset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/middle.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    
 </head>
+
 <body>
 
     <!-- Header Area -->
@@ -37,24 +39,18 @@
                         <div class="header__main-nav__arrow-guide">
                             <i id="main-nav-arrow" class="header__main-nav__arrow-guide--arrow-up"></i>
                         </div>
-                        <a href="index.html" class="header__main-nav--home" onmouseover="moveArrow('14px')">
+                        <a href="index.html" class="header__main-nav--home" onmouseover="moveArrow('14px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">
                             HOME
                         </a>
                     </li>
-                    <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')">STORE</a></li>
-                    <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')">IPHONE</a></li>
-                    <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')">IPAD</a></li>
-                    <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')">MACBOOK</a></li>
-                    <li><a href="" class="header__main-nav--accessories" onmouseover="moveArrow('570px')">ACCESSORIES</a></li>
+                    <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">STORE</a></li>
+                    <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPHONE</a></li>
+                    <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPAD</a></li>
+                    <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">MACBOOK</a></li>
+                    <li><a href="product.html" class="header__main-nav--accessories" onmouseover="moveArrow('570px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">ACCESSORIES</a></li>
                 </ul>
             </nav>
-    <script>
-        function moveArrow(xMove) {
-        var arrowElement = document.getElementById("main-nav-arrow");
-        arrowElement.style.left = xMove;
-        }
-    </script>
-            <nav class="header__drop-down-nav">
+            <nav class="header__drop-down-nav" onmouseover="displayHeaderDropDownMenu()" onmouseout="slowlyHideHeaderDropDownMenuNow()">
                 <div class="header__drop-down-nav__products">
                     <h5>Category</h5>
                     <ul>
@@ -93,6 +89,7 @@
     </div>
     <nav class="header__bread-crumbs"> <a href="index.html" class="active">Home</a> <span> / </span> <a href="#" class="">My shopping cart</a> </nav>
     <div class="header__bottom-space"></div>
+
     <!-- Cart Section Area -->
     <section class="cart-section wrapper">
         <div class="cart-section__table-header">
