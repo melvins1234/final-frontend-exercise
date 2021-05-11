@@ -196,3 +196,13 @@
         }
     }
 }
+@media (max-width:1030px)  { 
+    .cart-section__bottom{
+        margin: 0 40px;
+    }
+}
+@media (max-width:481px)  { 
+    .cart-section__bottom{
+        margin: 0 10px;
+    }
+}

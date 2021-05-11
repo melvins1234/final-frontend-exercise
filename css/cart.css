@@ -293,4 +293,16 @@
 .cart-section .cart-section__bottom__total-table--check-out button:active {
   background-color: #267bc5;
 }
+
+@media (max-width: 1030px) {
+  .cart-section__bottom {
+    margin: 0 40px;
+  }
+}
+
+@media (max-width: 481px) {
+  .cart-section__bottom {
+    margin: 0 10px;
+  }
+}
 /*# sourceMappingURL=cart.css.map */
