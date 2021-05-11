@@ -129,6 +129,12 @@
   }
 }
 
+@media (max-width: 480px) {
+  .breadcrumbs {
+    padding: 0 10px;
+  }
+}
+
 @media screen and (max-width: 1250px) {
   .banner__icon--left {
     left: 10px;

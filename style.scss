@@ -302,6 +302,9 @@ a{
     }
     &__tab{
         list-style-type: none;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         a{
             color: #33A0FF;
         }

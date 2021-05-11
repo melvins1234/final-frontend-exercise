@@ -94,3 +94,4 @@ if(document.getElementById("qty-plus-btn") && document.getElementById("qty-minus
     
 }
 //#endregion
+let points = document.querySelectorAll('.breadcrumbs__nav ul li:last-child');
