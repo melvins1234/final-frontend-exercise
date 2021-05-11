@@ -9,11 +9,36 @@
     <link rel="stylesheet" href="css/preset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/middle.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
 <body>
+
+    <!-- Modal Here -->
+
+    <section id="modal" class="modal">
+        <section class="modal__box">
+            <span class="modal__close"><i class="fas fa-times"></i></span>
+            <article class="modal__content">
+                <article class="modal__content--inner">
+                    <h3 class="modal__title">Newsletter</h3>
+                    <p class="modal__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <section class="bottom4__search modal__sub">
+                        <input type="text" name="email" id="email" placeholder="Email">
+                        <a href="#" class="bottom4__btn">Subscribe</a>
+                    </section>
+                 </article>
+                 <footer class="modal__unsub">
+                    <input type="checkbox" name="pop-up" id="pop-up" class="modal__checkbox" checked>
+                    <label for="pop-up" class="modal__label">Don’t show this popup again</label>
+                </footer>
+            </article>
+
+            <img class="modal__img" src="images/newsletter-img.png" alt="Gift">
+        </section>
+    </section>
 
     <!-- Header Area -->
     <div class="wrapper">
@@ -22,25 +47,127 @@
                 <span>EN&nbsp; <i class="fas fa-caret-down"></i></span>
                 <span>USD&nbsp; <i class="fas fa-caret-down"></i> </span>
                 <div class="header__top--user-profile"><i class="far fa-user"></i> My Profile</div>
-                <div class="header__top--cart"><i class="fas fa-shopping-basket"></i> 0 Items <span>$0.00</span></div>
+                <div class="header__top--cart">
+                    <a href="cart.html" class=""><i class="fas fa-shopping-basket"></i> 0 Items <span>$0.00</span></a>
+                </div>
                 <div class="header__top--search-icon"><i class="fas fa-search"></i></div>
             </div>
             <div class="header--brand">
-                    <h1>RAKU<span>TECH</span></h1>
+                <h1>RAKU<span>TECH</span></h1>
             </div>
-            <nav class="header__nav">
-                <ul>
-                    <li><a href="" class="active">HOME</a></li>
-                    <li><a href=""></a>STORE</a></li>
-                    <li><a href=""></a>IPHONE</a></li>
-                    <li><a href=""></a>IPAD</a></li>
-                    <li><a href=""></a>MACBOOK</a></li>
-                    <li><a href=""></a>ACCESSORIES</a></li>
-                </ul>
+            <nav class="header__main-nav header__mobile">
+                <section class="header__nav">
+                    <button type="button" class="header__main-nav--toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+    
+                    <div class="header--brand header__mobile--logo">
+                        <h1>RAKU<span>TECH</span></h1>
+                    </div>
+    
+                    <div class="header__top--cart header__mobile--cart">
+                        <a href="cart.html" class=""><i class="fas fa-shopping-basket"></i></a>
+                    </div>
+                </section>
+
+                <secition class="header__nav-bar">
+                    <ul>
+                        <li>
+                            <div class="header__main-nav__arrow-guide">
+                                <i id="main-nav-arrow" class="header__main-nav__arrow-guide--arrow-up"></i>
+                            </div>
+                            <a href="index.html" class="header__main-nav--home active" onmouseover="moveArrow('14px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">
+                                HOME
+                            </a>
+                            <span class="header__main-nav--carret"><i class="fas fa-caret-down"></i></span>
+                            
+    
+                            <nav class="header__mega-menu">
+                                <div class="header__mega-menu__products">
+                                    <h5>Category</h5>
+                                    <ul>
+                                        <li>Airport & Wireless</li>
+                                        <li>AppleCare</li>
+                                        <li>Bags, Shells & Sleeves</li>
+                                        <li>Business & Security</li>
+                                        <li>Cable & Docs</li>
+                                        <li>Cameras & Video</li>
+                                        <li>Car & Travel</li>
+                                        <li>Cases & Films</li>
+                                    </ul>
+                                </div>
+                                <div class="header__mega-menu__accessories-1">
+                                    <h5>Category</h5>
+                                    <ul>
+                                        <li>Charging Devices</li>
+                                        <li>Connected Home</li>
+                                        <li>Device Care</li>
+                                        <li>Display & Graphic</li>
+                                        <li>Fitness & Sport</li>
+                                        <li>Headphones</li>
+                                        <li>HealthKit</li>
+                                    </ul>
+                                </div>
+                                <div class="header__mega-menu__accessories-2">
+                                    <h5>Category</h5>
+                                    <ul>
+                                        <li>Mice & Keyboards</li>
+                                        <li>Music Creation</li>
+                                        <li>Networking & Server</li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </li>
+                        <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">STORE</a></li>
+                        <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPHONE</a></li>
+                        <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPAD</a></li>
+                        <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">MACBOOK</a></li>
+                        <li><a href="product.html" class="header__main-nav--accessories" onmouseover="moveArrow('570px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">ACCESSORIES</a></li>
+                    </ul>
+                </secition>
+            </nav>
+            <nav class="header__drop-down-nav" onmouseover="displayHeaderDropDownMenu()" onmouseout="slowlyHideHeaderDropDownMenuNow()">
+                <div class="header__drop-down-nav__products">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Airport & Wireless</li>
+                        <li>AppleCare</li>
+                        <li>Bags, Shells & Sleeves</li>
+                        <li>Business & Security</li>
+                        <li>Cable & Docs</li>
+                        <li>Cameras & Video</li>
+                        <li>Car & Travel</li>
+                        <li>Cases & Films</li>
+                    </ul>
+                </div>
+                <div class="header__drop-down-nav__accessories-1">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Charging Devices</li>
+                        <li>Connected Home</li>
+                        <li>Device Care</li>
+                        <li>Display & Graphic</li>
+                        <li>Fitness & Sport</li>
+                        <li>Headphones</li>
+                        <li>HealthKit</li>
+                    </ul>
+                </div>
+                <div class="header__drop-down-nav__accessories-2">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Mice & Keyboards</li>
+                        <li>Music Creation</li>
+                        <li>Networking & Server</li>
+                    </ul>
+                </div>
             </nav>
         </header>
     </div>
-
+<!-- Hide Bread Crumbs
+    <nav class="header__bread-crumbs"> <a href="index.html" class="active">Home</a> <span> / </span> <a href="#" class="">My shopping cart</a> </nav>
+-->
+    <div class="header__bottom-space"></div>
+    
     <!-- Banner Area -->
     <section id="banner" class="banner">
         <section class="wrapper banner__wrapper--flex">
@@ -346,7 +473,7 @@
             <h2 class="bottom4__title">Latest News</h2>
             <section class="bottom4__news bottom4__news--upper">
                 <article class="bottom4__news__box">
-                    <img src="images/latest-news2.png" alt="macbook" class="bottom4__news__image">
+                    <img src="images/smart-phone-card.png" alt="Smart Phone" class="bottom4__news__image">
                     <div class="bottom4__news__holder">
                         <span class="bottom4__news__date">01 Jan, 2015</span>
                         <h4 class="bottom4__news__title">Typesetting industry</h4>
@@ -430,10 +557,11 @@
     <!-- Footer Area -->
     <footer class="footer">
         <div class="footer__top-outer-container">
+ 
             <div class="footer__top wrapper">
                 <div class="footer__top--brand-description">
-                    <h3>RAKUTECH</h3>
-                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe cum hic eligendi a obcaecati voluptatum at maxime, dicta eaque.</span>
+                    <h3 class="footer__top--title">RAKUTECH</h3>
+                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.Since the 1500s, when an unknown printer.</span>
                 </div>
                 <div class="footer__top--social-media">
                     <h5 class="footer--heading">Follow Us</h5>
@@ -453,7 +581,7 @@
         </div>
         <div class="footer__middle wrapper">
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Information</h5>
+                <h5 class="footer--heading">Information <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -462,7 +590,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Service</h5>
+                <h5 class="footer--heading">Service <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -471,7 +599,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Extras</h5>
+                <h5 class="footer--heading">Extras <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -480,7 +608,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">My Account</h5>
+                <h5 class="footer--heading">My Account <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -489,7 +617,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Useful Links</h5>
+                <h5 class="footer--heading">Useful Links <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -498,7 +626,7 @@
                 </ul>
             </div>
             <div class="footer__middle--site-map">
-                <h5 class="footer--heading">Our Offers</h5>
+                <h5 class="footer--heading">Our Offers <i class="fas fa-arrow-up"></i></h5>
                 <ul>
                     <li>About Us</li>
                     <li>Information</li>
@@ -520,5 +648,8 @@
             
         </div>
     </footer>
+    
+    <script src="js/header.js" async></script>
+    <script src="js/plugin.js"></script>
 </body>
 </html>

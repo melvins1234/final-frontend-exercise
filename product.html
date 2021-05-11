@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
 
+    <script src="js/header.js" async></script>
     <link rel="stylesheet" href="css/preset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/middle.css">
@@ -16,6 +17,7 @@
 
 </head>
 <body>
+
     <!-- Header Area -->
     <div class="wrapper">
         <header class="header">
@@ -23,21 +25,65 @@
                 <span>EN&nbsp; <i class="fas fa-caret-down"></i></span>
                 <span>USD&nbsp; <i class="fas fa-caret-down"></i> </span>
                 <div class="header__top--user-profile"><i class="far fa-user"></i> My Profile</div>
-                <div class="header__top--cart"><i class="fas fa-shopping-basket"></i> 0 Items <span>$0.00</span></div>
+                <div class="header__top--cart">
+                    <a href="cart.html" class=""><i class="fas fa-shopping-basket"></i> 0 Items <span>$0.00</span></a>
+                </div>
                 <div class="header__top--search-icon"><i class="fas fa-search"></i></div>
             </div>
             <div class="header--brand">
                     <h1>RAKU<span>TECH</span></h1>
             </div>
-            <nav class="header__nav">
+            <nav class="header__main-nav">
                 <ul>
-                    <li><a href="" class="active">HOME</a></li>
-                    <li><a href=""></a>STORE</a></li>
-                    <li><a href=""></a>IPHONE</a></li>
-                    <li><a href=""></a>IPAD</a></li>
-                    <li><a href=""></a>MACBOOK</a></li>
-                    <li><a href=""></a>ACCESSORIES</a></li>
+                    <li>
+                        <div class="header__main-nav__arrow-guide">
+                            <i id="main-nav-arrow" class="header__main-nav__arrow-guide--arrow-up"></i>
+                        </div>
+                        <a href="index.html" class="header__main-nav--home" onmouseover="moveArrow('14px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">
+                            HOME
+                        </a>
+                    </li>
+                    <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">STORE</a></li>
+                    <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPHONE</a></li>
+                    <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPAD</a></li>
+                    <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">MACBOOK</a></li>
+                    <li><a href="product.html" class="header__main-nav--accessories active" onmouseover="moveArrow('570px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">ACCESSORIES</a></li>
                 </ul>
+            </nav>
+            <nav class="header__drop-down-nav" onmouseover="displayHeaderDropDownMenu()" onmouseout="slowlyHideHeaderDropDownMenuNow()">
+                <div class="header__drop-down-nav__products">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Airport & Wireless</li>
+                        <li>AppleCare</li>
+                        <li>Bags, Shells & Sleeves</li>
+                        <li>Business & Security</li>
+                        <li>Cable & Docs</li>
+                        <li>Cameras & Video</li>
+                        <li>Car & Travel</li>
+                        <li>Cases & Films</li>
+                    </ul>
+                </div>
+                <div class="header__drop-down-nav__accessories-1">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Charging Devices</li>
+                        <li>Connected Home</li>
+                        <li>Device Care</li>
+                        <li>Display & Graphic</li>
+                        <li>Fitness & Sport</li>
+                        <li>Headphones</li>
+                        <li>HealthKit</li>
+                    </ul>
+                </div>
+                <div class="header__drop-down-nav__accessories-2">
+                    <h5>Category</h5>
+                    <ul>
+                        <li>Mice & Keyboards</li>
+                        <li>Music Creation</li>
+                        <li>Networking & Server</li>
+                    </ul>
+                </div>
             </nav>
         </header>
     </div>
@@ -53,6 +99,7 @@
             </nav>
         </section>
     </section>
+    <!-- End of header codes -->
 
     <section id="main" class="main">
         <section class="wrapper">

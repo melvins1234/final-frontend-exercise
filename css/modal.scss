@@ -1,0 +1,113 @@
+@media screen and (max-height: 530px) {
+    .modal {
+        align-items: unset !important;
+    }
+}
+
+.modal {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    overflow-y: auto;
+    padding: 25px 20px;
+
+    &__box {
+        position: relative;
+        width: 960px;
+        max-width: 100%;
+        height: 480px;
+        background: #fff;
+        border-radius: 6px;
+    }
+
+    &__close {
+        font-size: 30px;
+        width: 47px;
+        height: 47px;
+        display: flex;
+        position: absolute;
+        background: #22262A;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        top: -20px;
+        right: -20px;
+        z-index: 2;
+        cursor: pointer;
+
+        i{
+            color: #fff;
+        }
+    }
+
+    &__content {
+        text-align: center;
+        width: 58%;
+        max-width: 100%;
+        z-index: 1;
+        position: relative;
+        background: white;
+        height: 100%;
+
+        &--inner {
+            padding: 63px 77px;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 58px;
+        margin-bottom: 34px;
+    }
+
+    &__description {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 67px;
+    }
+
+    &__sub {
+        padding: 0;
+    }
+
+    &__unsub {
+        input {
+            margin-right: 15px;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__label {
+        background: url("../images/check.png");
+    }
+
+    &__checkbox+&__label {
+        padding-left: 40px;
+        height: 24px;
+        display: inline-block;
+        line-height: 24px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    &__checkbox:checked+&__label {
+        background-position: 0 -24px;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

@@ -149,9 +149,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            div{
-                
-            }
+            
             &--subtotal{
                 display: flex;
                 justify-content: space-between;
@@ -195,5 +193,15 @@
             }
             
         }
+    }
+}
+@media (max-width:1030px)  { 
+    .cart-section__bottom{
+        margin: 0 40px;
+    }
+}
+@media (max-width:481px)  { 
+    .cart-section__bottom{
+        margin: 0 10px;
     }
 }
