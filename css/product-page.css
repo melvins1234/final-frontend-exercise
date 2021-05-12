@@ -30,6 +30,12 @@ hr {
   width: 370px;
 }
 
+.main__product--header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .main__product--info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -329,6 +335,9 @@ hr {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   font-weight: 600;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main__product--social-media a:first-child {
@@ -389,7 +398,7 @@ hr {
   display: none;
   position: absolute;
   content: '';
-  bottom: -42px;
+  bottom: -37px;
   left: 0;
   width: 100%;
   height: 4px;

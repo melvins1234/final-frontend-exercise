@@ -50,11 +50,27 @@ if(window_width <= 991){
     removeMenuTabEvents();
 }
 
+let counter = 1;
+
 window.onresize = function(event){
     window_width = window.innerWidth; 
     if(window_width <= 991){
         removeMenuTabEvents();
     }
+
+    // if(document.querySelector(".breadcrumbs__tab--active")){
+    //     let breadcrumbs__tab = document.querySelector(".breadcrumbs__tab--active");
+    //     const li_width = breadcrumbs__tab.clientWidth;
+    //     if(window_width <= 480){
+    //         breadcrumbs__tab.style.width = `${li_width - counter}px`;
+    //     }else{
+    //         counter = 1;
+    //         breadcrumbs__tab.style.width = `${li_width}px`;
+    //     }
+    //     counter++;
+    // console.log(li_width - counter);
+
+    // }
 }
 
 
@@ -99,12 +115,7 @@ if(document.getElementById("qty-plus-btn") && document.getElementById("qty-minus
 //#endregion
 
 
-if(document.querySelector(".breadcrumbs__tab--active")){
-    if(window_width <= 480){
-        
-    }
 
-}
 
 if(document.querySelectorAll(".main__product--select_color span")){
     let colors = document.querySelectorAll(".main__product--select_color span"),
