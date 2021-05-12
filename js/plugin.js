@@ -83,12 +83,15 @@ if(document.getElementById("qty-plus-btn") && document.getElementById("qty-minus
         minus_btn = document.getElementById("qty-minus-btn"),
         prod_quantity = plus_btn.previousElementSibling;
 
+        const remainQuantity = 20;
+
     plus_btn.addEventListener("click", function(){
+        if(parseInt(prod_quantity.textContent, 10) !== remainQuantity )
         prod_quantity.textContent = parseInt(prod_quantity.textContent, 10) + 1;
     });
 
     minus_btn.addEventListener("click", function(){
-        if(parseInt(prod_quantity.textContent, 10) > 1)
+        if(parseInt(prod_quantity.textContent, 10) > 0)
             prod_quantity.textContent = parseInt(prod_quantity.textContent, 10) - 1
     });
     
