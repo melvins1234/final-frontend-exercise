@@ -94,23 +94,65 @@ if(document.querySelector(".footer__middle--site-map")){
 //#endregion
 
 //#region Quantity Function
-if(document.getElementById("qty-plus-btn") && document.getElementById("qty-minus-btn")){
-    let plus_btn = document.getElementById("qty-plus-btn"),
-        minus_btn = document.getElementById("qty-minus-btn"),
-        prod_quantity = plus_btn.previousElementSibling;
 
-        const remainQuantity = 20;
+var cartObj = [
+    {'product_id': 'c04297141','product_image': 'c04297141.png', 'product_title': 'Philips Hue 7W BR30 Connected Downlight Lamp', 'product_price': 499, 'product_quantity': 2},
+    {'product_id': 'macbook-pro','product_image': 'macbook-pro.png', 'product_title': 'Apple MacBook Pro', 'product_price': 499, 'product_quantity': 2}
+]
 
-    plus_btn.addEventListener("click", function(){
-        if(parseInt(prod_quantity.textContent, 10) !== remainQuantity )
-        prod_quantity.textContent = parseInt(prod_quantity.textContent, 10) + 1;
+// Put the object into storage
+localStorage.setItem('cartObj', JSON.stringify(cartObj));
+
+
+
+JSON.parse(localStorage.getItem('cartObj')).forEach(element => {
+    let cartList = document.querySelector('.cart-section'),
+        div = document.createElement('div');
+
+        div.classList.add('cart-section__table-row');
+        div.setAttribute('id', element.product_id);
+        div.innerHTML = `<div class="cart-section__table-row--product">
+        <button class="cart-section__table-row--product--cancel-item-btn"><i class="fas fa-times"></i></button>
+        <img src="images/${element.product_image}">
+        ${element.product_title}
+    </div>
+    <div class="cart-section__table-row--unit-price"><span class="cart-section__table-row--unit-price--label">Unit Price</span>${element.product_price}</div>
+    <div class="cart-section__table-row--qty">
+        <button class="cart-section__table-row--qty--minus-btn" id="qty-minus-btn">-</button>
+        <div class="cart-section__table-row--qty--number">${element.product_quantity}</div>
+        <button class="cart-section__table-row--qty--plus-btn" id="qty-plus-btn">+</button>
+    </div>
+    <div class="cart-section__table-row--price"><span class="cart-section__table-row--price--label">Price</span>$998</div>`;
+
+        cartList.appendChild(div)
+
+    console.log(element.product_image);
+});
+
+// Retrieve the object from storage
+
+    const remainQuantity = 20;
+    document.addEventListener("click", function(e){
+        let prod_quantity = e.target.previousElementSibling;
+        if(e.target.id.split(' ').indexOf("qty-plus-btn") >- 1){
+            if(parseInt(e.target.previousElementSibling.textContent, 10) !== remainQuantity )
+                e.target.previousElementSibling.textContent = parseInt(e.target.previousElementSibling.textContent, 10) + 1;
+
+            console.log(e.target);
+            if(document.querySelectorAll(".cart-section__table-row--price")){
+                e.target.parentElement.nextElementSibling.textContent = `$${parseInt(e.target.previousElementSibling.textContent, 10) * 499}`
+            }
+
+        }else if(e.target.id.split(' ').indexOf("qty-minus-btn") >- 1){
+            if(parseInt(e.target.nextElementSibling.textContent, 10) > 1)
+                e.target.nextElementSibling.textContent = parseInt(e.target.nextElementSibling.textContent, 10) - 1
+        }else if(hasClass(e.target, "cart-section__table-row--product--cancel-item-btn"))
+            e.target.parentElement.parentElement.remove();
+
     });
 
-    minus_btn.addEventListener("click", function(){
-        if(parseInt(prod_quantity.textContent, 10) > 0)
-            prod_quantity.textContent = parseInt(prod_quantity.textContent, 10) - 1
-    });
-    
+function hasClass(elem, className) {
+    return elem.className.split(' ').indexOf(className) > -1;
 }
 //#endregion
 

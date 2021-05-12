@@ -95,10 +95,10 @@
                                 </div>
                             </nav>
                         </li>
-                        <li><a href="" class="header__main-nav--store" onmouseover="moveArrow('115px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">STORE</a></li>
-                        <li><a href="" class="header__main-nav--iphone" onmouseover="moveArrow('220px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPHONE</a></li>
-                        <li><a href="" class="header__main-nav--ipad" onmouseover="moveArrow('321px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPAD</a></li>
-                        <li><a href="" class="header__main-nav--macbook" onmouseover="moveArrow('432px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">MACBOOK</a></li>
+                        <li><a href="product-list.html" class="header__main-nav--store" onmouseover="moveArrow('115px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">STORE</a></li>
+                        <li><a href="product-list.html" class="header__main-nav--iphone" onmouseover="moveArrow('220px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPHONE</a></li>
+                        <li><a href="product-list.html" class="header__main-nav--ipad" onmouseover="moveArrow('321px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">IPAD</a></li>
+                        <li><a href="product-list.html" class="header__main-nav--macbook" onmouseover="moveArrow('432px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">MACBOOK</a></li>
                         <li><a href="product.html" class="header__main-nav--accessories" onmouseover="moveArrow('570px')" onmouseout="slowlyHideHeaderDropDownMenuNow()">ACCESSORIES</a></li>
                     </ul>
                 </secition>
@@ -141,9 +141,19 @@
         </header>
     </div>
 
-    <!-- Bread Crumbs -->
-    <nav class="header__bread-crumbs"> <a href="index.html" class="active">Home</a> <span> / </span> <a href="#" class="">My shopping cart</a> </nav>
-    <div class="header__bottom-space"></div>
+    <!-- Breadcrumbs -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <section class="wrapper">
+            <nav class="breadcrumbs__nav">
+                <ul>
+                    <li class="breadcrumbs__tab"><a href="#">Home</a></li>
+                    <li class="breadcrumbs__tab breadcrumbs__tab--active"><a href="#">My shopping cart</a></li>
+
+                </ul>
+            </nav>
+        </section>
+    </section>
+
 
     <!-- Cart Section Area -->
     <section class="cart-section wrapper">
@@ -153,7 +163,7 @@
             <div class="cart-section__table-header--qty">QTY</div>
             <div class="cart-section__table-header--price">PRICE</div>
         </div>
-        <div class="cart-section__table-row">
+        <!-- <div class="cart-section__table-row">
             <div class="cart-section__table-row--product">
                 <button class="cart-section__table-row--product--cancel-item-btn"><i class="fas fa-times"></i></button>
                 <img src="images/c04297141.png">
@@ -180,8 +190,8 @@
                 <button class="cart-section__table-row--qty--plus-btn" id="qty-plus-btn">+</button>
             </div>
             <div class="cart-section__table-row--price"><span class="cart-section__table-row--price--label">Price</span>$998</div>
-        </div>
-        <div class="cart-section__bottom">
+        </div> -->
+        <!-- <div class="cart-section__bottom">
             <div class="cart-section__bottom__voucher">
                 <input type="text" value="Voucher code">
                 <button class="cart-section__bottom__voucher--redeem-btn">Redeem</button>
@@ -207,7 +217,7 @@
                     <button class="cart-section__bottom__total-table--check-out--btn">Check Out</button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <!-- Footer Area -->

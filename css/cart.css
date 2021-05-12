@@ -88,12 +88,16 @@
   height: 20px;
   font-size: 0.8em;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .cart-section__table-row--product--cancel-item-btn i {
   color: #FD2E2E;
   padding: 0 0 0 1px;
   opacity: 70%;
+  position: relative;
+  z-index: -1;
 }
 
 .cart-section__table-row--product--cancel-item-btn:hover {
