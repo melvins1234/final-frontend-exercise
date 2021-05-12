@@ -108,7 +108,7 @@ if(document.querySelectorAll(".main__product--select_color span")){
         imageBg = document.querySelector(".main__product--image--big");
     for (let index = 0; index < colors.length; index++) {
         colors[index].addEventListener("click", function(){
-            imageBg.style.backgroundColor = this.classList.toString().substring(15);
+            imageBg.src = `images/beats__${this.classList.toString().substring(15)}.png`;
         });    
     }
 }

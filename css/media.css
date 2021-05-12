@@ -186,6 +186,69 @@
   }
 }
 
+@media (max-width: 960px) {
+  .main > .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .main__product--info {
+    width: 725px;
+  }
+  .main__product--image--big {
+    width: 330px;
+  }
+  .main__product--thumbnail img {
+    width: 80px;
+    height: auto;
+  }
+  .main__product--details {
+    width: 375px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main__product--info {
+    width: 660px;
+  }
+  .main__product--thumbnail img {
+    width: 68px;
+  }
+  .main__product--details {
+    width: 305px;
+  }
+}
+
+@media (max-width: 960px) {
+  .main__product--info, .main__product--upper {
+    width: 100%;
+  }
+  .main__product--details {
+    width: auto;
+  }
+  .main__product--image--big {
+    width: 370px;
+  }
+  .main__product--thumbnail img {
+    width: 85px;
+  }
+  .main__product--desc {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main__side--image {
+    top: unset !important;
+    right: unset !important;
+  }
+}
+
 @media (max-width: 1024px) {
   .middle__image--gopro {
     top: 89px;
