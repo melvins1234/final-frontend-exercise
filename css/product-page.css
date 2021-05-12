@@ -174,40 +174,67 @@ hr {
           transform: translate(-50%, -50%);
 }
 
-.main__product--blue {
+.main__product--c69692 {
+  background: #c69692;
+  border: 2px solid #c69692;
+}
+
+.main__product--c69692::after {
+  background: #c69692;
+}
+
+.main__product--d73181 {
+  background: #D73181;
+  border: 2px solid #D73181;
+}
+
+.main__product--d73181::after {
+  background: #D73181;
+}
+
+.main__product--006CFF {
   background: #006CFF;
   border: 2px solid #006CFF;
 }
 
-.main__product--blue::after {
+.main__product--006CFF::after {
   background: #006CFF;
 }
 
-.main__product--red {
+.main__product--fc3E39 {
   background: #FC3E39;
   border: 2px solid #FC3E39;
 }
 
-.main__product--red::after {
+.main__product--fc3E39::after {
   background: #FC3E39;
 }
 
-.main__product--black {
+.main__product--171717 {
   background: #171717;
   border: 2px solid #171717;
 }
 
-.main__product--black::after {
+.main__product--171717::after {
   background: #171717;
 }
 
-.main__product--yellow {
+.main__product--FFF600 {
   background: #FFF600;
   border: 2px solid #FFF600;
 }
 
-.main__product--yellow::after {
+.main__product--FFF600::after {
   background: #FFF600;
+}
+
+.main__product--dbdbdb {
+  background: #dbdbdb;
+  border: 2px solid #dbdbdb;
+}
+
+.main__product--dbdbdb::after {
+  background: #dbdbdb;
 }
 
 .main__product--sizes {
