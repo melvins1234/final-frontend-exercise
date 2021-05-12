@@ -123,6 +123,18 @@
   }
 }
 
+@media (max-width: 991px) {
+  .breadcrumbs {
+    margin-top: 155px;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumbs {
+    padding: 0 10px;
+  }
+}
+
 @media screen and (max-width: 1250px) {
   .banner__icon--left {
     left: 10px;
@@ -171,6 +183,69 @@
     display: block;
     margin: 0 auto;
     text-align: center;
+  }
+}
+
+@media (max-width: 960px) {
+  .main > .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .main__product--info {
+    width: 725px;
+  }
+  .main__product--image--big {
+    width: 330px;
+  }
+  .main__product--thumbnail img {
+    width: 80px;
+    height: auto;
+  }
+  .main__product--details {
+    width: 375px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main__product--info {
+    width: 660px;
+  }
+  .main__product--thumbnail img {
+    width: 68px;
+  }
+  .main__product--details {
+    width: 305px;
+  }
+}
+
+@media (max-width: 960px) {
+  .main__product--info, .main__product--upper {
+    width: 100%;
+  }
+  .main__product--details {
+    width: auto;
+  }
+  .main__product--image--big {
+    width: 370px;
+  }
+  .main__product--thumbnail img {
+    width: 85px;
+  }
+  .main__product--desc {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main__side--image {
+    top: unset !important;
+    right: unset !important;
   }
 }
 
@@ -376,22 +451,6 @@
   }
 }
 
-@media (max-width: 480px) {
-  .footer__top {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .footer__top > div {
-    margin: 0 auto;
-    text-align: center;
-  }
-}
-
 @media (max-width: 800px) {
   .footer__middle {
     -ms-flex-wrap: wrap;
@@ -438,6 +497,27 @@
   .footer__arrow h5 i {
     -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer__top > div {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footer__top > div h5 {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 /*# sourceMappingURL=media.css.map */

@@ -343,6 +343,9 @@ a {
 
 .breadcrumbs__tab {
   list-style-type: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .breadcrumbs__tab a {

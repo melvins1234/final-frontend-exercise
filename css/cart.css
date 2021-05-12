@@ -150,6 +150,7 @@
   width: 30px;
   height: 30px;
   color: #33A0FF;
+  cursor: pointer;
 }
 
 .cart-section__table-row--qty--number {
