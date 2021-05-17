@@ -358,6 +358,10 @@ a {
   color: #C1C8CE;
 }
 
+.breadcrumbs__tab--active {
+  width: 135px;
+}
+
 .breadcrumbs__tab--active a {
   color: #22262A;
 }
