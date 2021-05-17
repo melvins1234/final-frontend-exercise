@@ -1,7 +1,6 @@
 // Modal close 
 if(document.querySelector('.modal__close')){
     var closeBtnModal = document.querySelector('.modal__close');
-    console.log(closeBtnModal);
     closeBtnModal.addEventListener("click", function(){
         this.parentElement.parentElement.style.display = "none";
     });
@@ -16,7 +15,6 @@ var delayTimeOut;
 delayInProgress = false;
 arrowElement = document.getElementById("main-nav-arrow");
 headerDropDownMenu = document.getElementsByClassName("header__drop-down-nav");
-console.log("initialized")
 
 /* if script is still loading try this:
 ** (needs onload property on body tag)

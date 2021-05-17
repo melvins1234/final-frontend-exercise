@@ -455,6 +455,38 @@ a{
         width: 270px;
         max-width: 100%;
 
+        &__image{
+            height: 153px;
+        }
+
+        &__add-to-cart{
+            position: relative;
+            display: inline-flex;
+            border-radius: 50%;
+            border: 2px solid RGBa(51, 160, 255, 0.3);
+            width: 54px;
+            height: 54px;
+            z-index: 1;
+            justify-content: center;
+            align-items: center;
+
+            &::before{
+                content: "\f07a";
+                font-weight: 900;
+                font-family: "Font Awesome 5 Free";
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                line-height: 1;
+                font-size: 20px;
+                color: #33A0FF;
+            }
+
+            &:first-of-type::before{
+                content: "\f004";
+                font-weight: 400;
+            }
+        }
         &--hot{
             &::before{
                 content: "Hot";
@@ -540,16 +572,6 @@ a{
                 text-decoration: line-through;
             }
         }
-
-        &__icon{
-            font-size: 20px;
-            color: #33A0FF;
-            border-radius: 50%;
-            border: 2px solid RGBa(51, 160, 255, 0.3);
-            padding: 15px;
-
-        }
-
     }
 
     &__button{

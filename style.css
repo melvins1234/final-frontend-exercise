@@ -512,6 +512,45 @@ a {
   max-width: 100%;
 }
 
+.bottom1__card__image {
+  height: 153px;
+}
+
+.bottom1__card__add-to-cart {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 50%;
+  border: 2px solid RGBa(51, 160, 255, 0.3);
+  width: 54px;
+  height: 54px;
+  z-index: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bottom1__card__add-to-cart::before {
+  content: "\f07a";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-size: 20px;
+  color: #33A0FF;
+}
+
+.bottom1__card__add-to-cart:first-of-type::before {
+  content: "\f004";
+  font-weight: 400;
+}
+
 .bottom1__card--hot::before {
   content: "Hot";
   text-transform: uppercase;
@@ -605,14 +644,6 @@ a {
 .bottom1__card__price:last-of-type {
   color: #C1C8CE;
   text-decoration: line-through;
-}
-
-.bottom1__card__icon {
-  font-size: 20px;
-  color: #33A0FF;
-  border-radius: 50%;
-  border: 2px solid RGBa(51, 160, 255, 0.3);
-  padding: 15px;
 }
 
 .bottom1__button {
