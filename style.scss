@@ -872,3 +872,23 @@ a{
     }
 }
 /* footer.scss merged *end* */
+
+@mixin positionAbsolute {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.sign-up{
+    @include positionAbsolute();
+    &::before{
+        content: '';
+        background: url('images/sign-up-bg.png') center center;
+        background-size: cover;
+        @include positionAbsolute();
+    }
+    &::after{
+        content: '';
+        @include positionAbsolute();
+        background: transparent linear-gradient(180deg, #00000029 0%, #000000 100%) 0% 0% no-repeat padding-box;
+    }
+}
