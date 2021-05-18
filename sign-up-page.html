@@ -7,11 +7,48 @@
     <title>RAKUTECH</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/sign-up.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <section class='sign-up'>
         <section class="sign-up__wrapper wrapper">
-
+            <section class="sign-up__description">
+                <h1 class="sign-up__company-name">RAKU<span class="sign-up__company-name--color">TECH</span></h1>
+                <p class="sign-up__company-desc">Browse from over 500 devices in your area.</p>
+            </section>
+            <section class="sign-up__section">
+                <header class="sign-up__header">
+                    <h2 class="sign-up__header--title">Sign Up</h1>
+                    <span class="sign-up__header--text">Already have an account? <a href="javascript:;" class="sign-up__header--link">Log in</a></span>
+                </header>
+                <section class="sign-up__form">
+                    <form onsubmit="event.preventDefault();">
+                        <div class="sign-up__input-group">
+                            <label for="Full Name">Full Name</label>
+                            <input type="text" name="Full Name" id="FullName">
+                        </div>
+                        <div class="sign-up__input-group">
+                            <label for="Email">Email</label>
+                            <input type="email" name="Email" id="Email">
+                        </div>
+                        <div class="sign-up__input-group">
+                            <label for="Password">Password</label>
+                            <input type="password" name="Password" id="Password" placeholder="Must be at least 6 characters">
+                            <i class="far fa-eye" id="togglePassword"></i>
+                        </div>
+                        <div class="sign-up__input-group" style="">
+                            <input type="checkbox" name="SignUp" id="SignUp">
+                            <label for="SignUp" class="sign-up__chkbox-label">Sign up for email updates</label>
+                        </div>
+                        <button class="sign-up__button" type="submit">Sign Up</button>
+                    </form>
+                </section>
+                <footer class="sign-up__footer">
+                    <span class="sign-up__footer--text">By continuing, you agree to accept our Privacy Policy & Terms of Service.</span>
+                </footer>
+            </section>
         </section>
     </section>
 </body>
