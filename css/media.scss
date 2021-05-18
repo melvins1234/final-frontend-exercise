@@ -705,3 +705,19 @@
         }
     }
 }
+
+.sign-up{
+    @include for-Ipad(){
+        &::after{
+            background: transparent radial-gradient(circle, #00000029 0%, #000 100%) 0% 0% no-repeat padding-box;
+        }
+        &__wrapper{
+            flex-direction: column;
+        }
+
+        &__description{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+}

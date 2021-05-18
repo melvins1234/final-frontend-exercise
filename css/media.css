@@ -574,4 +574,20 @@
             justify-content: center;
   }
 }
+
+@media (max-width: 960px) {
+  .sign-up::after {
+    background: transparent radial-gradient(circle, #00000029 0%, #000 100%) 0% 0% no-repeat padding-box;
+  }
+  .sign-up__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .sign-up__description {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
 /*# sourceMappingURL=media.css.map */

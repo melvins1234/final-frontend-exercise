@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@media (max-height: 630px) {
+  .sign-up {
+    position: relative !important;
+  }
+  .sign-up__wrapper {
+    position: relative !important;
+    padding: 20px 0;
+  }
+}
+
+.sign-up {
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.sign-up::before {
+  content: '';
+  background: url("../images/sign-up-bg.png") center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-attachment: fixed;
+}
+
+.sign-up::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: transparent -webkit-gradient(linear, left top, left bottom, from(#00000029), to(#000000)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #00000029 0%, #000000 100%) 0% 0% no-repeat padding-box;
+}
+
+.sign-up__wrapper {
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
+  position: fixed;
+}
+
+.sign-up__section {
+  background: #FFFFFF;
+  padding: 20px;
+  width: 370px;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 8px;
+}
+
+.sign-up__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.sign-up__header--title {
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 24px;
+  color: #000;
+  line-height: 36px;
+}
+
+.sign-up__header--link {
+  color: #233975;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.sign-up__header--text {
+  margin-bottom: 24px;
+}
+
+.sign-up__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sign-up__form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.sign-up__form form input[type='text'], .sign-up__form form input[type='email'], .sign-up__form form input[type='password'] {
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.sign-up__form form input[type='checkbox'] {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.sign-up__form form input[type='checkbox']:checked + .sign-up__chkbox-label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #0079bf;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: -4px;
+}
+
+.sign-up__input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.sign-up__input-group label {
+  margin-bottom: 8px;
+  font-weight: medium;
+  font-size: 12px;
+}
+
+.sign-up__input-group i {
+  position: absolute;
+  right: 15px;
+  bottom: 17px;
+}
+
+.sign-up__chkbox-label {
+  position: relative;
+  cursor: pointer;
+}
+
+.sign-up__chkbox-label:before {
+  content: '';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #C4C4C4;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: -5px;
+}
+
+.sign-up__button {
+  background: #FD2E2E;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 17px;
+  border: 1px solid #FD2E2E;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.sign-up__button:hover {
+  background: #fff;
+  color: #FD2E2E;
+}
+
+.sign-up__footer--text {
+  font-size: 10px;
+  width: 196px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sign-up__company-name {
+  font-size: 36px;
+  line-height: 54px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+}
+
+.sign-up__company-name--color {
+  font: normal normal bold 36px/54px Montserrat;
+  color: #FD2E2E;
+}
+
+.sign-up__company-name::after {
+  content: '';
+  width: 64px;
+  display: block;
+  border: 4px solid #B2002D;
+  margin-top: 10px;
+}
+
+.sign-up__company-desc {
+  margin-top: 20px;
+  color: #fff;
+}
+/*# sourceMappingURL=sign-up.css.map */
