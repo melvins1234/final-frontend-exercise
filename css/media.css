@@ -576,6 +576,11 @@
 }
 
 @media (max-width: 960px) {
+  .sign-up {
+    width: auto;
+    padding: 0 10px;
+    position: relative;
+  }
   .sign-up::after {
     background: transparent radial-gradient(circle, #00000029 0%, #000 100%) 0% 0% no-repeat padding-box;
   }
@@ -584,6 +589,9 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding: 20px 10px;
+    width: auto;
+    position: relative !important;
   }
   .sign-up__description {
     text-align: center;

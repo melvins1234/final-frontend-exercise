@@ -3,43 +3,30 @@ totalPrice = document.querySelector("#cart-section__total"),
 total_items = document.querySelector(".header__top--cart-items");
 cart_total_price = document.querySelector(".header__top--cart-price");
 
+const togglePassword = document.querySelector('#togglePassword'),
+    password = document.querySelector('#password'),
+    signUpForm = document.querySelector('#signup-submit');
+
 //#region Header and Footer Functionalities
 let window_width = window.innerWidth;
-
 
 if(document.querySelector(".header__main-nav--toggle")){
     let toggleBtn = document.querySelector(".header__main-nav--toggle"),
         navBar    = document.querySelector(".header__nav-bar");
 
     toggleBtn.addEventListener("click", function(){
-        if(navBar.classList.contains("header__nav-bar--show")){
-            navBar.classList.remove("header__nav-bar--show");
-        }else{
-            navBar.classList.add("header__nav-bar--show");
-        }
+        navBar.classList.toggle('header__nav-bar--show')
     });
 }
 
 if(document.querySelector(".header__main-nav--carret")){
     let hasDropDown = document.querySelector(".header__main-nav--carret");
     hasDropDown.addEventListener("click", function(){
-        if(this.nextElementSibling.classList.contains("header__mega-menu--show")){
-            this.nextElementSibling.classList.remove("header__mega-menu--show");
-        }else{
-            this.nextElementSibling.classList.add("header__mega-menu--show")
-        }
-    
-        if(this.firstChild.classList.contains("fa-caret-down")){
-            this.firstChild.classList.remove("fa-caret-down");
-            this.firstChild.classList.add("fa-caret-up");
-        }else{
-            this.firstChild.classList.add("fa-caret-down");
-            this.firstChild.classList.remove("fa-caret-up");
-        }
-    
+        this.nextElementSibling.classList.toggle('header__mega-menu--show')
+        this.firstChild.classList.toggle('fa-caret-down');
+        this.firstChild.classList.toggle('fa-caret-up');
     });
 }
-
 
 function removeMenuTabEvents(){
     if(document.querySelectorAll(".header__nav-bar ul li a")){
@@ -48,7 +35,6 @@ function removeMenuTabEvents(){
             menuTabs[index].removeAttribute("onmouseover");
         }
     }
-
 }
 
 if(window_width <= 991){
@@ -64,31 +50,21 @@ window.onresize = function(event){
     }
 }
 
-
 if(document.querySelector(".footer__middle--site-map")){
     let footerTab = document.getElementsByClassName("footer__middle--site-map");
+    
     for (let index = 0; index < footerTab.length; index++) {
         footerTab[index].addEventListener("click", function(){
-            if(this.classList.contains("footer__arrow")){
-                this.classList.remove("footer__arrow");
-                this.lastElementChild.classList.remove("footer__nav--show");
-            }else{
-                this.classList.add("footer__arrow");
-                this.lastElementChild.classList.add("footer__nav--show");
-            }
-
+            this.classList.toggle('footer__arrow');
+            this.lastElementChild.classList.toggle("footer__nav--show");
         });
     }
-
 }
-
 //#endregion
 
 //#region Quantity Function
-
-var cartObj = [];
-//     {'product_id': 'c04297141','product_image': 'c04297141.png', 'product_title': 'Philips Hue 7W BR30 Connected Downlight Lamp', 'product_price': 499, 'product_quantity': 2}
-// ]
+var cartObj = [],
+    personSignedUp = [];
 
 // Put the object into storage
 
@@ -99,9 +75,11 @@ if(JSON.parse(localStorage.getItem('cartObj'))){
     totalItems();
     cartTotalPrice();
 }
-
-
-
+if(JSON.parse(localStorage.getItem('personSignedUp'))){
+    JSON.parse(localStorage.getItem('personSignedUp')).forEach(e => {
+        personSignedUp.push(e)
+    });
+}
 
 document.addEventListener('click', function(e){
     if(hasClass(e.target, 'bottom1__card__add-to-cart')){
@@ -255,8 +233,9 @@ function cartTotalPrice(){
         JSON.parse(localStorage.getItem('cartObj')).forEach( e => {
             total = parseFloat(total) + (parseFloat(e.product_quantity) * parseFloat(e.product_price));
         })
-    }   
     cart_total_price.textContent = `$ ${(total + 20).toFixed(2)}`;
+
+    }   
     
 }
 //#endregion
@@ -271,3 +250,47 @@ if(document.querySelectorAll(".main__product--select_color span")){
         });    
     }
 }
+
+if(togglePassword){
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+}
+
+const email = document.querySelector('#email');
+if(signUpForm){
+    signUpForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        let data = Object.fromEntries(new FormData(e.target).entries()),
+            emailInvalid = document.querySelector('.sign-up__invalid-feedback'),
+            checkExist;
+
+        if(personSignedUp){
+            checkExist = personSignedUp.find(function(personData, index){
+                if(personData.email === data.email)
+                    return true;
+            });
+        }
+
+        if(checkExist){
+            email.classList.add('sign-up__input--error');
+            emailInvalid.classList.add('sign-up__invalid-feedback--show');
+        }else{
+            personSignedUp.push(data);
+        }
+
+        localStorage.setItem('personSignedUp', JSON.stringify(personSignedUp));
+    });
+}
+
+document.addEventListener('click', function(e){
+    if(e.target.id.split(' ').indexOf("email") >- 1 && hasClass(e.target, 'sign-up__input--error'))
+        e.target.classList.toggle('sign-up__input--error');
+})
+
+
+

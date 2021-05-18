@@ -14,6 +14,8 @@
   height: 100%;
   width: 100%;
   position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .sign-up::before {
@@ -23,6 +25,8 @@
   height: 100%;
   width: 100%;
   position: absolute;
+  left: 0;
+  top: 0;
   background-attachment: fixed;
 }
 
@@ -31,6 +35,8 @@
   height: 100%;
   width: 100%;
   position: absolute;
+  left: 0;
+  top: 0;
   top: 0;
   background: transparent -webkit-gradient(linear, left top, left bottom, from(#00000029), to(#000000)) 0% 0% no-repeat padding-box;
   background: transparent linear-gradient(180deg, #00000029 0%, #000000 100%) 0% 0% no-repeat padding-box;
@@ -40,7 +46,6 @@
   z-index: 2;
   height: 100%;
   width: 100%;
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,7 +54,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: auto;
+  overflow-y: auto;
   position: fixed;
 }
 
@@ -171,6 +176,7 @@
   position: absolute;
   right: 15px;
   bottom: 17px;
+  cursor: pointer;
 }
 
 .sign-up__chkbox-label {
@@ -205,6 +211,8 @@
   border: 1px solid #FD2E2E;
   border-radius: 8px;
   margin-bottom: 20px;
+  font: normal normal bold 12px/15px Montserrat;
+  letter-spacing: 0.6px;
 }
 
 .sign-up__button:hover {
@@ -219,6 +227,7 @@
   display: block;
   margin: 0 auto;
   text-align: center;
+  font: normal normal normal 10px/15px Montserrat;
 }
 
 .sign-up__company-name {
@@ -245,5 +254,20 @@
 .sign-up__company-desc {
   margin-top: 20px;
   color: #fff;
+  font: normal normal normal 16px/21px Montserrat;
+}
+
+.sign-up__invalid-feedback {
+  display: none;
+  margin-top: 10px;
+  color: #FD2E2E;
+}
+
+.sign-up__invalid-feedback--show {
+  display: block;
+}
+
+.sign-up__input--error {
+  border: 1px solid #FD2E2E !important;
 }
 /*# sourceMappingURL=sign-up.css.map */
