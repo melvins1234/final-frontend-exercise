@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'ProximaNova';
     src: url('font/ProximaNova-Regular.woff2') format('woff2'),
@@ -316,6 +317,7 @@ a{
         }
 
         &--active{
+            width: 135px;
             a{
                 color: #22262A;
             }
@@ -871,3 +873,4 @@ a{
     }
 }
 /* footer.scss merged *end* */
+
