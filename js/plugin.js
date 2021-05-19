@@ -298,7 +298,9 @@ if(signUpForm){
 if(loginForm){
     loginForm.addEventListener('submit', function(e){
         e.preventDefault();
-        let data = Object.fromEntries(new FormData(e.target).entries());
+        let data = Object.fromEntries(new FormData(e.target).entries()),
+            emailInvalid = document.querySelector('.sign-up__invalid-feedback');
+
 
         if(personSignedUp){
             checkExist = personSignedUp.find(function(personData, index){
@@ -309,6 +311,9 @@ if(loginForm){
 
         if(checkExist){
             window.location.replace('index.html')
+        }else{
+            email.classList.add('sign-up__input--error');
+            emailInvalid.classList.add('sign-up__invalid-feedback--show');
         }
 
     });
