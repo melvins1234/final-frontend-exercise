@@ -267,7 +267,11 @@ if(signUpForm){
         e.preventDefault();
         let data = Object.fromEntries(new FormData(e.target).entries()),
             emailInvalid = document.querySelector('.sign-up__invalid-feedback'),
+            successPopUp = document.querySelector('.successful-registered'),
+            divBackDrop = document.querySelector('.successful-registered__backdrop'),
             checkExist;
+
+
 
         if(personSignedUp){
             checkExist = personSignedUp.find(function(personData, index){
@@ -281,15 +285,25 @@ if(signUpForm){
             emailInvalid.classList.add('sign-up__invalid-feedback--show');
         }else{
             personSignedUp.push(data);
+            successPopUp.classList.toggle('successful-registered--show');
+            divBackDrop.classList.toggle('successful-registered__backdrop--show')
+            successPopUp.style.display = 'flex';
         }
 
         localStorage.setItem('personSignedUp', JSON.stringify(personSignedUp));
     });
 }
 
+function insertAfter(newNode, existingNode) {
+    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+}
+
 document.addEventListener('click', function(e){
     if(e.target.id.split(' ').indexOf("email") >- 1 && hasClass(e.target, 'sign-up__input--error'))
         e.target.classList.toggle('sign-up__input--error');
+    else if(hasClass(e.target, 'successful-registered__success')){
+        window.location.replace('login-in-page.html')
+    }
 })
 
 

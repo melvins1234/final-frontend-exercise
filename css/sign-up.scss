@@ -8,8 +8,8 @@
     }
 }
 
-body{
-
+.fade{
+    transition: opacity .15s linear;
 }
 
 @mixin positionAbsolute {
@@ -227,4 +227,5 @@ body{
             border: 1px solid #FD2E2E !important; 
         }
     }
+    
 }

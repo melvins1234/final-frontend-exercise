@@ -17,15 +17,18 @@
         <!-- Modal Here -->
 
     <section id="modal" class="modal successful-registered">
-        <section class="modal__box">
-            <span class="modal__close"><i class="fas fa-check-circle"></i></span>
-            <article class="modal__content">
-                <article class="modal__content--inner">
-                    <h3 class="modal__title">Awesome!</h3>
-                    <p class="modal__description">Your account has successfully registered. Check your email for details</p>
+        <section class="successful-registered__box">
+            <article class="successful-registered__content">
+                <span class="successful-registered__icon"><i class="fas fa-check"></i></span>
+                <h3 class="modal__title successful-registered__title">Awesome!</h3>
+                <p class="modal__description successful-registered__description">Your account has successfully registered. Check your email for details</p>
+                <footer class="successful-registered__footer">
+                    <button class="successful-registered__success" data-dismiss="modal">OK</button>
+                </footer>
             </article>
         </section>
     </section>
+    <div class="fade successful-registered__backdrop successful-registered__backdrop--fade"></div>
 
     <section class='sign-up'>
         <section class="sign-up__wrapper wrapper">
@@ -36,7 +39,7 @@
             <section class="sign-up__section">
                 <header class="sign-up__header">
                     <h2 class="sign-up__header--title">Sign Up</h2>
-                    <span class="sign-up__header--text">Already have an account? <a href="javascript:;" class="sign-up__header--link">Log in</a></span>
+                    <span class="sign-up__header--text">Already have an account? <a href="login-in-page.html" class="sign-up__header--link">Log in</a></span>
                 </header>
                 <section class="sign-up__form">
                     <form id="signup-submit" >

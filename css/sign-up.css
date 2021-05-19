@@ -9,6 +9,11 @@
   }
 }
 
+.fade {
+  -webkit-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
 .sign-up {
   font-family: 'Montserrat', sans-serif;
   height: 100%;
