@@ -5,7 +5,8 @@ cart_total_price = document.querySelector(".header__top--cart-price");
 
 const togglePassword = document.querySelector('#togglePassword'),
     password = document.querySelector('#password'),
-    signUpForm = document.querySelector('#signup-submit');
+    signUpForm = document.querySelector('#signup-submit'),
+    loginForm = document.querySelector('#login-submit');
 
 //#region Header and Footer Functionalities
 let window_width = window.innerWidth;
@@ -293,6 +294,26 @@ if(signUpForm){
         localStorage.setItem('personSignedUp', JSON.stringify(personSignedUp));
     });
 }
+
+if(loginForm){
+    loginForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        let data = Object.fromEntries(new FormData(e.target).entries());
+
+        if(personSignedUp){
+            checkExist = personSignedUp.find(function(personData, index){
+                if(personData.email === data.email && personData.password === data.password)
+                    return true;
+            });
+        }
+
+        if(checkExist){
+            window.location.replace('index.html')
+        }
+
+    });
+}
+
 
 function insertAfter(newNode, existingNode) {
     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
