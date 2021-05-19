@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
+
 @media (max-height: 630px) {
     .sign-up{position: relative !important;}
     .sign-up__wrapper{
@@ -63,11 +64,11 @@
         text-align: center;
 
         &--title{
-            font-size: 24px;
             margin-top: 50px;
             margin-bottom: 24px;
             color: #000;
             line-height: 36px;
+            font: normal normal bold 24px/36px Montserrat;
         }
 
         &--link{
@@ -123,7 +124,7 @@
 
         label{
             margin-bottom: 8px;
-            font-weight: medium;
+            font-weight: 500;
             font-size: 12px;
         }
 
@@ -183,6 +184,14 @@
             margin: 0 auto;
             text-align: center;
             font: normal normal normal 10px/15px Montserrat;
+            margin-bottom: 20px;
+        }
+        &__create-acc{
+            width: 100%;
+            a {
+                color: #B2002D;
+                font-weight: bold;
+            }
         }
     }
 
@@ -228,4 +237,61 @@
         }
     }
     
+}
+
+.sign-in{
+    &__header{
+        &--title{
+            margin-top: 20px;
+        }
+    }
+    &__btn{
+        display: block;
+        width: 100%;
+        font: normal normal bold 12px/15px Montserrat;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        color: #fff;
+        padding: 15px;
+        border-radius: 6px;
+        i{
+            margin-right: 25px;
+        }
+
+        &--apple{
+            background: #000;
+        }
+        &--facebook{
+            background: #3A5998;
+        }
+        &:hover{
+            opacity: 0.9;
+        }
+    }
+    &__separate{
+        width: 100%;
+        position: relative;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        
+        &::before, &::after{
+            content: '';
+            width: 44%;
+            height: 0;
+            border-top: 1px solid #C4C4C4;
+            position: absolute;
+        }
+
+        &::before{
+            left: 0;
+        }
+
+        &::after{
+            right: 0;
+        }
+
+    }
 }
