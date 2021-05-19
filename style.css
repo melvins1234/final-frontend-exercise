@@ -56,6 +56,50 @@ a {
   color: #000;
 }
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  -webkit-appearance: none;
+}
+
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+
+/* end reset */
 .wrapper {
   width: 1170px;
   max-width: 100%;
@@ -134,6 +178,7 @@ a {
 
 .header__main-nav--toggle {
   display: none;
+  background: transparent;
 }
 
 .header__main-nav--carret {

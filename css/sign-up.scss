@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
+
 @media (max-height: 630px) {
     .sign-up{position: relative !important;}
     .sign-up__wrapper{
@@ -8,14 +9,16 @@
     }
 }
 
-body{
-
+.fade{
+    transition: opacity .15s linear;
 }
 
 @mixin positionAbsolute {
     height: 100%;
     width: 100%;
     position: absolute;
+    left: 0;
+    top: 0;
 }
 .sign-up{
     font-family: 'Montserrat', sans-serif;
@@ -35,11 +38,12 @@ body{
     }
     &__wrapper{
         z-index: 2;
-        @include positionAbsolute();
+        height: 100%;
+        width: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        overflow: auto;
+        overflow-y: auto;
         position: fixed;
     }
 
@@ -60,11 +64,11 @@ body{
         text-align: center;
 
         &--title{
-            font-size: 24px;
             margin-top: 50px;
             margin-bottom: 24px;
             color: #000;
             line-height: 36px;
+            font: normal normal bold 24px/36px Montserrat;
         }
 
         &--link{
@@ -120,7 +124,7 @@ body{
 
         label{
             margin-bottom: 8px;
-            font-weight: medium;
+            font-weight: 500;
             font-size: 12px;
         }
 
@@ -128,6 +132,7 @@ body{
             position: absolute;
             right: 15px;
             bottom: 17px;
+            cursor: pointer;
         }
     }
 
@@ -162,7 +167,8 @@ body{
         border: 1px solid #FD2E2E;
         border-radius: 8px;
         margin-bottom: 20px;
-
+        font: normal normal bold 12px/15px Montserrat;
+        letter-spacing: 0.6px;
         &:hover{
             background: #fff;
             color: #FD2E2E;
@@ -177,6 +183,15 @@ body{
             display: block;
             margin: 0 auto;
             text-align: center;
+            font: normal normal normal 10px/15px Montserrat;
+            margin-bottom: 20px;
+        }
+        &__create-acc{
+            width: 100%;
+            a {
+                color: #B2002D;
+                font-weight: bold;
+            }
         }
     }
 
@@ -204,5 +219,79 @@ body{
     &__company-desc{
         margin-top: 20px;
         color: #fff;
+        font: normal normal normal 16px/21px Montserrat;
+    }
+
+    &__invalid-feedback{
+        display: none;
+        margin-top: 10px;
+        color: #FD2E2E;
+
+        &--show{
+            display: block;
+        }
+    }
+    &__input{
+        &--error{
+            border: 1px solid #FD2E2E !important; 
+        }
+    }
+    
+}
+
+.sign-in{
+    &__header{
+        &--title{
+            margin-top: 20px;
+        }
+    }
+    &__btn{
+        display: block;
+        width: 100%;
+        font: normal normal bold 12px/15px Montserrat;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        color: #fff;
+        padding: 15px;
+        border-radius: 6px;
+        i{
+            margin-right: 25px;
+        }
+
+        &--apple{
+            background: #000;
+        }
+        &--facebook{
+            background: #3A5998;
+        }
+        &:hover{
+            opacity: 0.9;
+        }
+    }
+    &__separate{
+        width: 100%;
+        position: relative;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        
+        &::before, &::after{
+            content: '';
+            width: 44%;
+            height: 0;
+            border-top: 1px solid #C4C4C4;
+            position: absolute;
+        }
+
+        &::before{
+            left: 0;
+        }
+
+        &::after{
+            right: 0;
+        }
+
     }
 }
