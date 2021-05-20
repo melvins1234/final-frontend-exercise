@@ -130,10 +130,18 @@
   transition: opacity .15s linear;
   z-index: 4;
   background: transparent;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
 }
 
 .successful-registered:not(.successful-registered--show) {
   opacity: 0;
+}
+
+.successful-registered--show .successful-registered__box {
+  -webkit-transform: none;
+          transform: none;
 }
 
 .successful-registered__box {
@@ -145,6 +153,10 @@
   text-align: center;
   max-width: 100%;
   position: relative;
+  transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+  -webkit-transform: translate(0, -115px);
+          transform: translate(0, -115px);
+  height: 301px;
 }
 
 .successful-registered__title {

@@ -117,8 +117,15 @@
     transition: opacity .15s linear;
     z-index: 4;
     background: transparent;
+    align-items: center !important;
     &:not(.successful-registered--show){
         opacity: 0;
+    }
+
+    &--show{
+        & .successful-registered__box {
+            transform: none;
+        }
     }
 
     &__box{
@@ -130,6 +137,9 @@
         text-align: center;
         max-width: 100%;
         position: relative;
+        transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+        transform: translate(0,-115px);
+        height: 301px;
     }
 
     &__title{
