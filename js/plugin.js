@@ -269,10 +269,11 @@ if(signUpForm){
         let data = Object.fromEntries(new FormData(e.target).entries()),
             emailInvalid = document.querySelector('.sign-up__invalid-feedback'),
             successPopUp = document.querySelector('.successful-registered'),
-            divBackDrop = document.querySelector('.successful-registered__backdrop'),
+            div = document.createElement('div'),
             checkExist;
 
-
+            div.classList.add('fade','successful-registered__backdrop', 'successful-registered__backdrop--fade');
+            console.log(data);
 
         if(personSignedUp){
             checkExist = personSignedUp.find(function(personData, index){
@@ -286,9 +287,12 @@ if(signUpForm){
             emailInvalid.classList.add('sign-up__invalid-feedback--show');
         }else{
             personSignedUp.push(data);
-            successPopUp.classList.toggle('successful-registered--show');
-            divBackDrop.classList.toggle('successful-registered__backdrop--show')
             successPopUp.style.display = 'flex';
+            insertAfter(div,successPopUp)
+            setTimeout(function(){
+                div.classList.add('successful-registered__backdrop--show');
+                successPopUp.classList.toggle('successful-registered--show');
+            }, 20)
         }
 
         localStorage.setItem('personSignedUp', JSON.stringify(personSignedUp));
@@ -300,7 +304,6 @@ if(loginForm){
         e.preventDefault();
         let data = Object.fromEntries(new FormData(e.target).entries()),
             emailInvalid = document.querySelector('.sign-up__invalid-feedback');
-
 
         if(personSignedUp){
             checkExist = personSignedUp.find(function(personData, index){
@@ -331,6 +334,3 @@ document.addEventListener('click', function(e){
         window.location.replace('login-in-page.html')
     }
 })
-
-
-
