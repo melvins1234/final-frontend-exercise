@@ -28,6 +28,8 @@ hr {
 
 .main__product--image--big {
   width: 370px;
+  -webkit-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
 }
 
 .main__product--header {
@@ -71,6 +73,7 @@ hr {
 .main__product--thumbnail img {
   width: 85px;
   height: 85px;
+  cursor: pointer;
 }
 
 .main__product--thumbnail img:hover {

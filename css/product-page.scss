@@ -19,7 +19,8 @@ hr{
             flex-direction: column;
 
             &--big{
-                width: 370px
+                width: 370px;
+                transition: opacity .25s ease-in-out;
             }
         }
 
@@ -48,6 +49,8 @@ hr{
             img{
                 width: 85px;
                 height: 85px;
+                cursor: pointer;
+                
                 &:hover{
                     transform: scale(1.1);
                 }

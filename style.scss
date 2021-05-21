@@ -710,6 +710,11 @@ mark {background-color: transparent;color:inherit;}
             padding: 0 20px;
             width: 390px;
             max-width: 100%;
+
+            img{
+                width: 160px;
+                height: auto;
+            }
         }
 
         &__date{

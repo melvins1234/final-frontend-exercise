@@ -109,14 +109,24 @@ document.addEventListener('click', function(e){
         // totalItems();
         // cartTotalPrice();
         //#endregion
+
+        let elementTarget = e.target.offsetParent.offsetParent.offsetParent.offsetParent,
+            thumbnail = elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('images/','').replace('.png','');
         productInfo.push(
-            {'product_id': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''),
-            'product_image': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''), 
-            'product_title': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__title').textContent, 
-            'product_price': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__price').textContent.replace('$',''), 
-            'product_price_before': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__price--before').textContent.replace('$',''),
+            {'product_id': elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''),
+            'product_title': elementTarget.querySelector('.bottom1__card__title').textContent, 
+            'product_price': elementTarget.querySelector('.bottom1__card__price').textContent.replace('$',''), 
+            'product_price_before': elementTarget.querySelector('.bottom1__card__price--before').textContent.replace('$',''),
+            'product_image': elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''), 
+            'product_thumb_image': {
+                'thumb_1': `${thumbnail}_thumb_1.png`,
+                'thumb_2': `${thumbnail}_thumb_2.png`,
+                'thumb_3': `${thumbnail}_thumb_3.png`,
+                'thumb_4': `${thumbnail}_thumb_4.png`
+            },
             'product_quantity': 1}
         );
+        localStorage.removeItem('productInfo');
         localStorage.setItem('productInfo', JSON.stringify(productInfo));
     }
 });
@@ -155,6 +165,7 @@ if(localStorage.getItem('cartObj')){
         }
     });
 }
+
 if(localStorage.getItem('productInfo')){
     JSON.parse(localStorage.getItem('productInfo')).forEach(e => {
         let product_info = document.querySelector(".main__product--info");
@@ -163,11 +174,30 @@ if(localStorage.getItem('productInfo')){
             product_info.querySelector('.main__product--title').textContent = e.product_title;
             product_info.querySelector('.bottom1__card__price').textContent = `$${e.product_price}`;
             product_info.querySelector('.bottom1__card__price--before').textContent = `$${e.product_price_before}`;
+
+            let imageThumb = document.querySelector(".main__product--thumbnail").children;
+
+            for (let index = 0; index < imageThumb.length; index++) {
+                imageThumb[index].src = `../images/${e.product_thumb_image['thumb_'+(index+1)]}`              
+            }
+            
         }
     });
    
 }
 
+let productImages = document.querySelectorAll(".main__product--thumbnail img");
+if(productImages){
+    for (let index = 0; index < productImages.length; index++) {
+        productImages[index].addEventListener('click', function(){
+            this.offsetParent.offsetParent.querySelector('.main__product--image--big').style.opacity = '0';
+            setTimeout(function(){
+                productImages[index].offsetParent.offsetParent.querySelector('.main__product--image--big').style.opacity = '1';
+                productImages[index].offsetParent.offsetParent.querySelector('.main__product--image--big').src = productImages[index].getAttribute('src');
+            }, 250);
+        });
+    }
+}
 // Retrieve the object from storage
 
 const remainQuantity = 20;

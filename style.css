@@ -824,6 +824,11 @@ mark {
   max-width: 100%;
 }
 
+.bottom4__news__box img {
+  width: 160px;
+  height: auto;
+}
+
 .bottom4__news__date {
   color: #C1C8CE;
   display: block;
