@@ -65,7 +65,8 @@ if(document.querySelector(".footer__middle--site-map")){
 
 //#region Quantity Function
 var cartObj = [],
-    personSignedUp = [];
+    personSignedUp = [],
+    productInfo = [];
 
 // Put the object into storage
 
@@ -84,29 +85,39 @@ if(JSON.parse(localStorage.getItem('personSignedUp'))){
 
 document.addEventListener('click', function(e){
     if(hasClass(e.target, 'bottom1__card__add-to-cart')){
+        //#region 
+        // if(cartObj){
+        //     var checkExist = cartObj.find(function(post, index){
+        //         if(post.product_id === e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''))
+        //             return true;
+        //     });
+        // }
 
-        if(cartObj){
-            var checkExist = cartObj.find(function(post, index){
-                if(post.product_id === e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''))
-                    return true;
-            });
-        }
+        // if(checkExist){
+        //     checkExist.product_quantity = parseInt(checkExist.product_quantity) + 1;
+        // }else{
+        //     cartObj.push(
+        //         {'product_id': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''),
+        //         'product_image': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''), 
+        //         'product_title': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__title').textContent, 
+        //         'product_price': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__price').textContent.replace('$',''), 
+        //         'product_quantity': 1}
+        //     );
+        // }
 
-        if(checkExist){
-            checkExist.product_quantity = parseInt(checkExist.product_quantity) + 1;
-        }else{
-            cartObj.push(
-                {'product_id': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''),
-                'product_image': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''), 
-                'product_title': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__title').textContent, 
-                'product_price': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__price').textContent.replace('$',''), 
-                'product_quantity': 1}
-            );
-        }
-
-        localStorage.setItem('cartObj', JSON.stringify(cartObj));
-        totalItems();
-        cartTotalPrice();
+        // localStorage.setItem('cartObj', JSON.stringify(cartObj));
+        // totalItems();
+        // cartTotalPrice();
+        //#endregion
+        productInfo.push(
+            {'product_id': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''),
+            'product_image': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''), 
+            'product_title': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__title').textContent, 
+            'product_price': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__price').textContent.replace('$',''), 
+            'product_price_before': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__price--before').textContent.replace('$',''),
+            'product_quantity': 1}
+        );
+        localStorage.setItem('productInfo', JSON.stringify(productInfo));
     }
 });
 
@@ -144,6 +155,18 @@ if(localStorage.getItem('cartObj')){
         }
     });
 }
+if(localStorage.getItem('productInfo')){
+    JSON.parse(localStorage.getItem('productInfo')).forEach(e => {
+        let product_info = document.querySelector(".main__product--info");
+        if(product_info){
+            product_info.querySelector('.main__product--image--big').src = `../images/${e.product_id}`
+            product_info.querySelector('.main__product--title').textContent = e.product_title;
+            product_info.querySelector('.bottom1__card__price').textContent = `$${e.product_price}`;
+            product_info.querySelector('.bottom1__card__price--before').textContent = `$${e.product_price_before}`;
+        }
+    });
+   
+}
 
 // Retrieve the object from storage
 
@@ -164,8 +187,9 @@ document.addEventListener("click", function(e){
             prod_quantity.textContent = parseInt(prod_quantity.textContent, 10) + 1;
             checkExist.product_quantity = parseInt(checkExist.product_quantity) + 1;
         }
-        if(document.querySelectorAll(".cart-section__table-row--price--label-price"))
+        if(document.querySelector(".cart-section__table-row--price--label-price")){
             prod_price.textContent = `$${parseInt(prod_quantity.textContent, 10) * parseFloat(e.target.parentElement.parentElement.querySelector(".cart-section__table-row--unit-price").textContent.replace('Unit Price', ''))}`
+        }
 
         subtotalPrice.textContent = `$ ${subtotal().subtotal}`;
         totalPrice.textContent = `$ ${subtotal().totalPrice}`;
@@ -200,6 +224,15 @@ document.addEventListener("click", function(e){
         localStorage.setItem('cartObj', JSON.stringify(cartObj));
 
         total_items.textContent =  `${cartObj.length} Items`
+    }else if(e.target.id.split(' ').indexOf("prod_qty-plus-btn") >- 1){
+        let prod_quantity = e.target.previousElementSibling;
+        if(parseInt(prod_quantity.textContent, 10) !== remainQuantity)
+            prod_quantity.textContent = parseInt(prod_quantity.textContent, 10) + 1;
+    }else if(e.target.id.split(' ').indexOf("prod_qty-minus-btn") >- 1){
+        let prod_quantity = e.target.nextElementSibling;
+
+    if(parseInt(prod_quantity.textContent, 10) > 1)
+        prod_quantity.textContent = parseInt(prod_quantity.textContent, 10) - 1
     }
 
 });
