@@ -133,6 +133,9 @@
   .breadcrumbs {
     padding: 0 10px;
   }
+  .breadcrumbs__tab--active {
+    width: 135px;
+  }
 }
 
 @media screen and (max-width: 1250px) {

@@ -165,12 +165,12 @@ hr{
                 background: #006CFF;
             }
         }
-        &--fc3E39{
-            background: #FC3E39;
-            border: 2px solid #FC3E39;
+        &--eb4837{
+            background: #eb4837;
+            border: 2px solid #eb4837;
 
             &::after{
-                background: #FC3E39;
+                background: #eb4837;
             }
         }
         &--171717{
@@ -240,6 +240,11 @@ hr{
             height: 46px;
             background: RGBA(51, 160, 255, 0.2);
             position: relative;
+            cursor: pointer;
+
+            &-active{
+                color: #eb4837;
+            }
 
             &::before{
                 position: absolute;

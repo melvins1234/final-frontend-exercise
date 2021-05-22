@@ -403,10 +403,6 @@ mark {
   color: #C1C8CE;
 }
 
-.breadcrumbs__tab--active {
-  width: 135px;
-}
-
 .breadcrumbs__tab--active a {
   color: #22262A;
 }
@@ -559,10 +555,6 @@ mark {
   padding: 30px 17px 0;
   width: 270px;
   max-width: 100%;
-}
-
-.bottom1__card__image {
-  height: 153px;
 }
 
 .bottom1__card__add-to-cart {

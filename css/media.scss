@@ -203,7 +203,9 @@
         padding: 0 10px;
 
         &__tab {
-            &--active {}
+            &--active {
+               width: 135px;
+            }
         }
     }
 }
