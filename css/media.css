@@ -291,6 +291,15 @@
   .main__product--lower hr {
     margin: 10px 0 30px;
   }
+  .main__product--bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main__product--cart {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 1024px) {

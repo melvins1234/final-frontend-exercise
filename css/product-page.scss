@@ -225,19 +225,40 @@ hr{
         }
 
         &--add-to-cart{
-            width: 150px;
-            padding: 15px 20px;
+            width: 231px;
+            padding: 10px 60px;
             background: RGBA(51, 160, 255, 0.2);
             color: #33A0FF;
             font-weight: 600;
             @include flexStyle();
             margin-right: 16px;
+            line-height: 40px;
+
+            &:hover {
+                opacity: 0.7;
+                background: #33A0FF;
+                color: #fff;
+            }
+
+            &--flex-d{
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            span, strong{
+                line-height: 20px;
+                font-weight: 100;
+            }
+
+            strong{
+                font-weight: bold;
+            }
         }
 
         &--heart{
             color: #33A0FF;
             width: 46px;
-            height: 46px;
+            height: 60px;
             background: RGBA(51, 160, 255, 0.2);
             position: relative;
             cursor: pointer;
@@ -398,3 +419,24 @@ hr{
         }
     }
 }
+
+.loader{
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    margin: 5px auto;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

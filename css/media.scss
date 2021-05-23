@@ -190,6 +190,7 @@
         }
 
     }
+   
 }
 
 .breadcrumbs {
@@ -395,6 +396,14 @@
                 hr{
                     margin: 10px 0 30px;
                 }
+            }
+
+            &--bottom{
+                flex-direction: column;
+            }
+
+            &--cart{
+                margin-top: 20px;
             }
         }
     }

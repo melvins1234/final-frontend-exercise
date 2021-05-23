@@ -92,8 +92,24 @@ mark {background-color: transparent;color:inherit;}
     &__mobile{
 
         &--logo, &--cart{
-            display: none;    
+            display: none;  
+            position: relative;  
         }
+
+        &--cart--badge{
+            font-size: 11px;
+            position: absolute;
+            top: -7px;
+            color: #fff;
+            background: #000;
+            border-radius: 50%;
+            padding: 0 5px;
+            right: -11px;
+            line-height: 15px;
+            height: 16px;
+            opacity: 1 !important;
+            display: none;
+        }   
     }
 
     &__top {
