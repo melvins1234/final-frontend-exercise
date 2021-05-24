@@ -24,7 +24,7 @@ var modalElement = `
     <img class="modal__img" src="images/newsletter-img.png" alt="Gift">
 </section>`;
 
-if(!localStorage.getItem('isModalClose')){
+if(!sessionStorage.getItem('isModalClose')){
     let section = document.createElement('section'),
         modalInsertAfter = document.querySelector('.modal__insert');
     section.id = 'modal';
@@ -41,7 +41,7 @@ if(document.querySelector('.modal__close')){
     closeBtnModal.addEventListener("click", function(){
         this.parentElement.parentElement.remove();
 
-        localStorage.setItem('isModalClose', false);
+        sessionStorage.setItem('isModalClose', false);
 
     });
 
