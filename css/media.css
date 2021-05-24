@@ -133,6 +133,9 @@
   .breadcrumbs {
     padding: 0 10px;
   }
+  .breadcrumbs__tab--active {
+    width: 135px;
+  }
 }
 
 @media screen and (max-width: 1250px) {
@@ -287,6 +290,15 @@
   }
   .main__product--lower hr {
     margin: 10px 0 30px;
+  }
+  .main__product--bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main__product--cart {
+    margin-top: 20px;
   }
 }
 

@@ -117,6 +117,22 @@ mark {
 
 .header__mobile--logo, .header__mobile--cart {
   display: none;
+  position: relative;
+}
+
+.header__mobile--cart--badge {
+  font-size: 11px;
+  position: absolute;
+  top: -7px;
+  color: #fff;
+  background: #000;
+  border-radius: 50%;
+  padding: 0 5px;
+  right: -11px;
+  line-height: 15px;
+  height: 16px;
+  opacity: 1 !important;
+  display: none;
 }
 
 .header__top {
@@ -403,10 +419,6 @@ mark {
   color: #C1C8CE;
 }
 
-.breadcrumbs__tab--active {
-  width: 135px;
-}
-
 .breadcrumbs__tab--active a {
   color: #22262A;
 }
@@ -559,10 +571,6 @@ mark {
   padding: 30px 17px 0;
   width: 270px;
   max-width: 100%;
-}
-
-.bottom1__card__image {
-  height: 153px;
 }
 
 .bottom1__card__add-to-cart {
@@ -822,6 +830,11 @@ mark {
   padding: 0 20px;
   width: 390px;
   max-width: 100%;
+}
+
+.bottom4__news__box img {
+  width: 160px;
+  height: auto;
 }
 
 .bottom4__news__date {
