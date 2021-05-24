@@ -39,6 +39,26 @@ function removeMenuTabEvents(){
     }
 }
 
+if(JSON.parse(localStorage.getItem('personLogedIn'))){
+    document.querySelector('.header__top--user-profile a').innerHTML = document.querySelector('.header__top--user-profile a').innerHTML.replace('Log-in','Log-out');
+    document.querySelector('.header__top--user-profile a').href = 'javascript:;'
+}
+
+if(document.querySelector('.header__top--user-profile a')){
+    let logOutIn = document.querySelector('.header__top--user-profile a');
+
+    logOutIn.addEventListener('click', function(){
+        if(this.innerHTML.indexOf('Log-out') > -1){
+            localStorage.removeItem('personLogedIn');
+            window.location.reload();
+            setTimeout(function(){
+                this.href = 'login-page.html';
+
+            }, 1000);
+        }
+    });
+}
+
 if(window_width <= 991){
     removeMenuTabEvents();
 }
@@ -431,8 +451,12 @@ if(loginForm){
         }
 
         if(checkExist){
-            window.location.replace(JSON.parse(localStorage.getItem('pathName')).pathname.replace('/',''))
-            // personLogedIn
+            // window.location.replace(JSON.parse(localStorage.getItem('pathName')).pathname.replace('/',''));
+            window.location.replace('index.html');
+            personLogedIn.push({
+                'email': data.email 
+            })
+            localStorage.setItem('personLogedIn', JSON.stringify(personLogedIn));
         }else{
             email.classList.add('sign-up__input--error');
             emailInvalid.classList.add('sign-up__invalid-feedback--show');
@@ -456,10 +480,17 @@ document.addEventListener('click', function(e){
     if(e.target.id.split(' ').indexOf("email") >- 1 && hasClass(e.target, 'sign-up__input--error'))
         e.target.classList.toggle('sign-up__input--error');
     else if(hasClass(e.target, 'successful-registered__success'))
-        window.location.replace('login-in-page.html')
+        window.location.replace('login-page.html')
     else if(hasClass(e.target, 'cart-section__bottom__total-table--check-out--btn')){
-        if(personLogedIn){
+        if(!JSON.parse(localStorage.getItem('personLogedIn')))
             window.location.replace('login-page.html')
+        else{
+            localStorage.removeItem('cartObj');
+            localStorage.removeItem('productInfo')
+            window.location.reload();
         }
+        
+        // console.log(l);
     }
 })
+
