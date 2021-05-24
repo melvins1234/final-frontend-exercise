@@ -2,8 +2,15 @@
 if(document.querySelector('.modal__close')){
     var closeBtnModal = document.querySelector('.modal__close');
     closeBtnModal.addEventListener("click", function(){
-        this.parentElement.parentElement.style.display = "none";
+        this.parentElement.parentElement.remove();
+
+        localStorage.setItem('isModalClose', false);
+
     });
+
+    if(!!localStorage.getItem('isModalClose')){
+        closeBtnModal.parentElement.parentElement.remove();
+    }
 }
 
 // Initialize global variables
