@@ -190,6 +190,7 @@
         }
 
     }
+   
 }
 
 .breadcrumbs {
@@ -203,7 +204,9 @@
         padding: 0 10px;
 
         &__tab {
-            &--active {}
+            &--active {
+               width: 135px;
+            }
         }
     }
 }
@@ -393,6 +396,14 @@
                 hr{
                     margin: 10px 0 30px;
                 }
+            }
+
+            &--bottom{
+                flex-direction: column;
+            }
+
+            &--cart{
+                margin-top: 20px;
             }
         }
     }

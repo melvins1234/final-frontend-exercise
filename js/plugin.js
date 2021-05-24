@@ -1,6 +1,7 @@
 let subtotalPrice = document.querySelector("#cart-section__subtotal"),
 totalPrice = document.querySelector("#cart-section__total"),
-total_items = document.querySelector(".header__top--cart-items");
+total_items = document.querySelector(".header__top--cart-items"),
+total_items_ = document.querySelector(".header__mobile--cart--badge"),
 cart_total_price = document.querySelector(".header__top--cart-price");
 
 const togglePassword = document.querySelector('#togglePassword'),
@@ -38,6 +39,26 @@ function removeMenuTabEvents(){
     }
 }
 
+if(JSON.parse(localStorage.getItem('personLogedIn'))){
+    document.querySelector('.header__top--user-profile a').innerHTML = document.querySelector('.header__top--user-profile a').innerHTML.replace('Log-in','Log-out');
+    document.querySelector('.header__top--user-profile a').href = 'javascript:;'
+}
+
+if(document.querySelector('.header__top--user-profile a')){
+    let logOutIn = document.querySelector('.header__top--user-profile a');
+
+    logOutIn.addEventListener('click', function(){
+        if(this.innerHTML.indexOf('Log-out') > -1){
+            localStorage.removeItem('personLogedIn');
+            window.location.reload();
+            setTimeout(function(){
+                this.href = 'login-page.html';
+
+            }, 1000);
+        }
+    });
+}
+
 if(window_width <= 991){
     removeMenuTabEvents();
 }
@@ -66,6 +87,8 @@ if(document.querySelector(".footer__middle--site-map")){
 //#region Quantity Function
 var cartObj = [],
     personSignedUp = [],
+    personLogedIn = [],
+    pathName = {},
     productInfo = [];
 
 // Put the object into storage
@@ -83,41 +106,82 @@ if(JSON.parse(localStorage.getItem('personSignedUp'))){
     });
 }
 
+let avoidSpamClick = false;
+
 document.addEventListener('click', function(e){
     if(hasClass(e.target, 'bottom1__card__add-to-cart')){
-        //#region 
-        // if(cartObj){
-        //     var checkExist = cartObj.find(function(post, index){
-        //         if(post.product_id === e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''))
-        //             return true;
-        //     });
-        // }
 
-        // if(checkExist){
-        //     checkExist.product_quantity = parseInt(checkExist.product_quantity) + 1;
-        // }else{
-        //     cartObj.push(
-        //         {'product_id': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''),
-        //         'product_image': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''), 
-        //         'product_title': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__title').textContent, 
-        //         'product_price': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__price').textContent.replace('$',''), 
-        //         'product_quantity': 1}
-        //     );
-        // }
-
-        // localStorage.setItem('cartObj', JSON.stringify(cartObj));
-        // totalItems();
-        // cartTotalPrice();
-        //#endregion
+        let elementTarget = e.target.offsetParent.offsetParent.offsetParent.offsetParent,
+            thumbnail = elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('../images/','').replace('.png','');
         productInfo.push(
-            {'product_id': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''),
-            'product_image': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''), 
-            'product_title': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__title').textContent, 
-            'product_price': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__price').textContent.replace('$',''), 
-            'product_price_before': e.target.offsetParent.offsetParent.offsetParent.offsetParent.querySelector('.bottom1__card__price--before').textContent.replace('$',''),
+            {'product_id': elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('../images/',''),
+            'product_title': elementTarget.querySelector('.bottom1__card__title').textContent, 
+            'product_price': elementTarget.querySelector('.bottom1__card__price').textContent.replace('$',''), 
+            'product_price_before': elementTarget.querySelector('.bottom1__card__price--before').textContent.replace('$',''),
+            'product_image': elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('../images/',''), 
+            'product_thumb_image': {
+                'thumb_1': `${thumbnail}_thumb_1.png`,
+                'thumb_2': `${thumbnail}_thumb_2.png`,
+                'thumb_3': `${thumbnail}_thumb_3.png`,
+                'thumb_4': `${thumbnail}_thumb_4.png`
+            },
             'product_quantity': 1}
         );
+        localStorage.removeItem('productInfo');
         localStorage.setItem('productInfo', JSON.stringify(productInfo));
+    }else if(hasClass(e.target,'main__product--add-to-cart')){
+        if(avoidSpamClick){
+            return;
+        }
+        avoidSpamClick = true;
+
+
+        let div = document.createElement('div'),
+            textInner = e.target.innerHTML;
+        div.classList.add('loader');
+        e.target.innerHTML = '';
+        e.target.appendChild(div);
+
+        setTimeout(function(){
+            e.target.innerHTML = `<span>Item added to Shopping Cart</span><strong>GO TO SHOPPING CART</strong>`;
+            e.target.classList.toggle('main__product--add-to-cart--flex-d');
+            e.target.href = "cart.html"
+
+            //#region 
+            if(cartObj){
+                var checkExist = cartObj.find(function(post, index){
+                    if(post.product_id === e.target.offsetParent.querySelector('.main__product--image--big').getAttribute('src').replace('../images/',''))
+                        return true;
+                });
+            }
+
+            if(checkExist){
+                checkExist.product_quantity = parseInt(checkExist.product_quantity) + parseInt(e.target.offsetParent.querySelector('.cart-section__table-row--qty--number').textContent);
+            }else{
+                cartObj.push(
+                    {'product_id': e.target.offsetParent.querySelector('.main__product--image--big').getAttribute('src').replace('../images/',''),
+                    'product_image': e.target.offsetParent.querySelector('.main__product--image--big').getAttribute('src').replace('../images/',''), 
+                    'product_title': e.target.offsetParent.querySelector('.main__product--title').textContent, 
+                    'product_price': e.target.offsetParent.querySelector('.bottom1__card__price').textContent.replace('$',''), 
+                    'product_quantity': e.target.offsetParent.querySelector('.cart-section__table-row--qty--number').textContent}
+                );
+            }
+
+            localStorage.setItem('cartObj', JSON.stringify(cartObj));
+            totalItems();
+            cartTotalPrice();
+            //#endregion
+        }, 2000);
+        
+        setTimeout(function(){
+            e.target.innerHTML = textInner;
+            e.target.href = 'javascript:;';
+            e.target.classList.toggle('main__product--add-to-cart--flex-d');
+        }, 4000);
+
+        setTimeout(function(){
+            avoidSpamClick = false;
+        }, 4000)
     }
 });
 
@@ -155,6 +219,7 @@ if(localStorage.getItem('cartObj')){
         }
     });
 }
+
 if(localStorage.getItem('productInfo')){
     JSON.parse(localStorage.getItem('productInfo')).forEach(e => {
         let product_info = document.querySelector(".main__product--info");
@@ -163,11 +228,42 @@ if(localStorage.getItem('productInfo')){
             product_info.querySelector('.main__product--title').textContent = e.product_title;
             product_info.querySelector('.bottom1__card__price').textContent = `$${e.product_price}`;
             product_info.querySelector('.bottom1__card__price--before').textContent = `$${e.product_price_before}`;
+
+            let imageThumb = document.querySelector(".main__product--thumbnail").children;
+
+            for (let index = 0; index < imageThumb.length; index++) {
+                imageThumb[index].src = `../images/${e.product_thumb_image['thumb_'+(index+1)]}`              
+            }
+
+            if(e.product_title !== 'Beats Solo2 On Ear Headphones'){
+                product_info.querySelector('.main__product--select_color').remove();
+            }
+            
         }
     });
    
 }
 
+let productAddFav = document.querySelector('.main__product--heart');
+if(productAddFav){
+    productAddFav.addEventListener('click', function(){
+        ['far', 'fas', 'main__product--heart-active'].map(v=> this.classList.toggle(v) )
+    })
+}
+
+let productImages = document.querySelectorAll(".main__product--thumbnail img");
+if(productImages){
+    for (let index = 0; index < productImages.length; index++) {
+        productImages[index].classList.remove('active');
+        productImages[index].addEventListener('click', function(){
+            this.offsetParent.offsetParent.querySelector('.main__product--image--big').style.opacity = '0';
+            setTimeout(function(){
+                    productImages[index].offsetParent.offsetParent.querySelector('.main__product--image--big').style.opacity = '1';
+                    productImages[index].offsetParent.offsetParent.querySelector('.main__product--image--big').src = productImages[index].getAttribute('src');
+                }, 250);
+        });
+    }
+}
 // Retrieve the object from storage
 
 const remainQuantity = 20;
@@ -224,6 +320,7 @@ document.addEventListener("click", function(e){
         localStorage.setItem('cartObj', JSON.stringify(cartObj));
 
         total_items.textContent =  `${cartObj.length} Items`
+        total_items_.textContent = `${cartObj.length}`;
     }else if(e.target.id.split(' ').indexOf("prod_qty-plus-btn") >- 1){
         let prod_quantity = e.target.previousElementSibling;
         if(parseInt(prod_quantity.textContent, 10) !== remainQuantity)
@@ -257,8 +354,11 @@ function hasClass(elem, className) {
 }
 
 function totalItems(){
-    if(total_items && JSON.parse(localStorage.getItem('cartObj')))
+    if(total_items && JSON.parse(localStorage.getItem('cartObj')) && total_items_){
         total_items.textContent = `${JSON.parse(localStorage.getItem('cartObj')).length} Items`; 
+        total_items_.style.display = 'block';
+        total_items_.textContent = `${JSON.parse(localStorage.getItem('cartObj')).length}`; 
+    }
 }
 
 function cartTotalPrice(){
@@ -280,7 +380,12 @@ if(document.querySelectorAll(".main__product--select_color span")){
         imageBg = document.querySelector(".main__product--image--big");
     for (let index = 0; index < colors.length; index++) {
         colors[index].addEventListener("click", function(){
-            imageBg.src = `images/beats__${this.classList.toString().substring(15)}.png`;
+            imageBg.src = `../images/beats__${this.classList.toString().substring(15)}.png`;
+
+            let imageThumb = document.querySelectorAll('.main__product--thumbnail img');
+            for (let innerIndex = 0; innerIndex < imageThumb.length; innerIndex++) {
+                imageThumb[innerIndex].src = `../images/beats__${colors[index].classList.toString().substring(15)}_thumb_${innerIndex+1}.png`;
+            }
         });    
     }
 }
@@ -346,7 +451,12 @@ if(loginForm){
         }
 
         if(checkExist){
-            window.location.replace('index.html')
+            // window.location.replace(JSON.parse(localStorage.getItem('pathName')).pathname.replace('/',''));
+            window.location.replace('index.html');
+            personLogedIn.push({
+                'email': data.email 
+            })
+            localStorage.setItem('personLogedIn', JSON.stringify(personLogedIn));
         }else{
             email.classList.add('sign-up__input--error');
             emailInvalid.classList.add('sign-up__invalid-feedback--show');
@@ -361,9 +471,26 @@ function insertAfter(newNode, existingNode) {
 }
 
 document.addEventListener('click', function(e){
+    pathName = {}
+    pathName = {
+        'pathname': window.location.pathname
+    };
+    localStorage.setItem('pathName', JSON.stringify(pathName));
+
     if(e.target.id.split(' ').indexOf("email") >- 1 && hasClass(e.target, 'sign-up__input--error'))
         e.target.classList.toggle('sign-up__input--error');
-    else if(hasClass(e.target, 'successful-registered__success')){
-        window.location.replace('login-in-page.html')
+    else if(hasClass(e.target, 'successful-registered__success'))
+        window.location.replace('login-page.html')
+    else if(hasClass(e.target, 'cart-section__bottom__total-table--check-out--btn')){
+        if(!JSON.parse(localStorage.getItem('personLogedIn')))
+            window.location.replace('login-page.html')
+        else{
+            localStorage.removeItem('cartObj');
+            localStorage.removeItem('productInfo')
+            window.location.reload();
+        }
+        
+        // console.log(l);
     }
 })
+

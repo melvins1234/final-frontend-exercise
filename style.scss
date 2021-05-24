@@ -92,8 +92,24 @@ mark {background-color: transparent;color:inherit;}
     &__mobile{
 
         &--logo, &--cart{
-            display: none;    
+            display: none;  
+            position: relative;  
         }
+
+        &--cart--badge{
+            font-size: 11px;
+            position: absolute;
+            top: -7px;
+            color: #fff;
+            background: #000;
+            border-radius: 50%;
+            padding: 0 5px;
+            right: -11px;
+            line-height: 15px;
+            height: 16px;
+            opacity: 1 !important;
+            display: none;
+        }   
     }
 
     &__top {
@@ -333,7 +349,6 @@ mark {background-color: transparent;color:inherit;}
         }
 
         &--active{
-            width: 135px;
             a{
                 color: #22262A;
             }
@@ -472,10 +487,6 @@ mark {background-color: transparent;color:inherit;}
         padding: 30px 17px 0;
         width: 270px;
         max-width: 100%;
-
-        &__image{
-            height: 153px;
-        }
 
         &__add-to-cart{
             position: relative;
@@ -710,6 +721,11 @@ mark {background-color: transparent;color:inherit;}
             padding: 0 20px;
             width: 390px;
             max-width: 100%;
+
+            img{
+                width: 160px;
+                height: auto;
+            }
         }
 
         &__date{
