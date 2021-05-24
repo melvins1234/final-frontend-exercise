@@ -1,5 +1,42 @@
 // Modal close 
+function insertAfter(newNode, existingNode) {
+    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+}
+
+var modalElement = ` 
+<section class="modal__box">
+    <span class="modal__close"><i class="fas fa-times"></i></span>
+    <article class="modal__content">
+        <article class="modal__content--inner">
+            <h3 class="modal__title">Newsletter</h3>
+            <p class="modal__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            <section class="bottom4__search modal__sub">
+                <input type="text" name="email" id="email" placeholder="Email">
+                <a href="#" class="bottom4__btn">Subscribe</a>
+            </section>
+         </article>
+         <footer class="modal__unsub">
+            <input type="checkbox" name="pop-up" id="pop-up" class="modal__checkbox" checked>
+            <label for="pop-up" class="modal__label">Don’t show this popup again</label>
+        </footer>
+    </article>
+
+    <img class="modal__img" src="images/newsletter-img.png" alt="Gift">
+</section>`;
+
+if(!localStorage.getItem('isModalClose')){
+    let section = document.createElement('section'),
+        modalInsertAfter = document.querySelector('.modal__insert');
+    section.id = 'modal';
+    section.classList = 'modal';
+    section.innerHTML = modalElement;
+
+    if(modalInsertAfter)
+        insertAfter(section, modalInsertAfter);
+}
+
 if(document.querySelector('.modal__close')){
+    
     var closeBtnModal = document.querySelector('.modal__close');
     closeBtnModal.addEventListener("click", function(){
         this.parentElement.parentElement.remove();
@@ -8,9 +45,7 @@ if(document.querySelector('.modal__close')){
 
     });
 
-    if(!!localStorage.getItem('isModalClose')){
-        closeBtnModal.parentElement.parentElement.remove();
-    }
+    
 }
 
 // Initialize global variables
