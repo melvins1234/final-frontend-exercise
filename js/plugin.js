@@ -112,13 +112,13 @@ document.addEventListener('click', function(e){
     if(hasClass(e.target, 'bottom1__card__add-to-cart')){
 
         let elementTarget = e.target.offsetParent.offsetParent.offsetParent.offsetParent,
-            thumbnail = elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('../images/','').replace('.png','');
+            thumbnail = elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('images/','').replace('.png','');
         productInfo.push(
-            {'product_id': elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('../images/',''),
+            {'product_id': elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''),
             'product_title': elementTarget.querySelector('.bottom1__card__title').textContent, 
             'product_price': elementTarget.querySelector('.bottom1__card__price').textContent.replace('$',''), 
             'product_price_before': elementTarget.querySelector('.bottom1__card__price--before').textContent.replace('$',''),
-            'product_image': elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('../images/',''), 
+            'product_image': elementTarget.querySelector('.bottom1__card__image').getAttribute('src').replace('images/',''), 
             'product_thumb_image': {
                 'thumb_1': `${thumbnail}_thumb_1.png`,
                 'thumb_2': `${thumbnail}_thumb_2.png`,
@@ -150,7 +150,7 @@ document.addEventListener('click', function(e){
             //#region 
             if(cartObj){
                 var checkExist = cartObj.find(function(post, index){
-                    if(post.product_id === e.target.offsetParent.querySelector('.main__product--image--big').getAttribute('src').replace('../images/',''))
+                    if(post.product_id === e.target.offsetParent.querySelector('.main__product--image--big').getAttribute('src').replace('images/',''))
                         return true;
                 });
             }
@@ -159,8 +159,8 @@ document.addEventListener('click', function(e){
                 checkExist.product_quantity = parseInt(checkExist.product_quantity) + parseInt(e.target.offsetParent.querySelector('.cart-section__table-row--qty--number').textContent);
             }else{
                 cartObj.push(
-                    {'product_id': e.target.offsetParent.querySelector('.main__product--image--big').getAttribute('src').replace('../images/',''),
-                    'product_image': e.target.offsetParent.querySelector('.main__product--image--big').getAttribute('src').replace('../images/',''), 
+                    {'product_id': e.target.offsetParent.querySelector('.main__product--image--big').getAttribute('src').replace('images/',''),
+                    'product_image': e.target.offsetParent.querySelector('.main__product--image--big').getAttribute('src').replace('images/',''), 
                     'product_title': e.target.offsetParent.querySelector('.main__product--title').textContent, 
                     'product_price': e.target.offsetParent.querySelector('.bottom1__card__price').textContent.replace('$',''), 
                     'product_quantity': e.target.offsetParent.querySelector('.cart-section__table-row--qty--number').textContent}
@@ -224,7 +224,7 @@ if(localStorage.getItem('productInfo')){
     JSON.parse(localStorage.getItem('productInfo')).forEach(e => {
         let product_info = document.querySelector(".main__product--info");
         if(product_info){
-            product_info.querySelector('.main__product--image--big').src = `../images/${e.product_id}`
+            product_info.querySelector('.main__product--image--big').src = `images/${e.product_id}`
             product_info.querySelector('.main__product--title').textContent = e.product_title;
             product_info.querySelector('.bottom1__card__price').textContent = `$${e.product_price}`;
             product_info.querySelector('.bottom1__card__price--before').textContent = `$${e.product_price_before}`;
@@ -232,7 +232,7 @@ if(localStorage.getItem('productInfo')){
             let imageThumb = document.querySelector(".main__product--thumbnail").children;
 
             for (let index = 0; index < imageThumb.length; index++) {
-                imageThumb[index].src = `../images/${e.product_thumb_image['thumb_'+(index+1)]}`              
+                imageThumb[index].src = `images/${e.product_thumb_image['thumb_'+(index+1)]}`              
             }
 
             if(e.product_title !== 'Beats Solo2 On Ear Headphones'){
@@ -380,11 +380,11 @@ if(document.querySelectorAll(".main__product--select_color span")){
         imageBg = document.querySelector(".main__product--image--big");
     for (let index = 0; index < colors.length; index++) {
         colors[index].addEventListener("click", function(){
-            imageBg.src = `../images/beats__${this.classList.toString().substring(15)}.png`;
+            imageBg.src = `images/beats__${this.classList.toString().substring(15)}.png`;
 
             let imageThumb = document.querySelectorAll('.main__product--thumbnail img');
             for (let innerIndex = 0; innerIndex < imageThumb.length; innerIndex++) {
-                imageThumb[innerIndex].src = `../images/beats__${colors[index].classList.toString().substring(15)}_thumb_${innerIndex+1}.png`;
+                imageThumb[innerIndex].src = `images/beats__${colors[index].classList.toString().substring(15)}_thumb_${innerIndex+1}.png`;
             }
         });    
     }
